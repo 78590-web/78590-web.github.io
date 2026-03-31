@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>蛋白质化学 | Hexo</title>
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="Normal _Italic_ **Strong**
+" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>HEXO</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;HEXO</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>蛋白质化学</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/31
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                生物化学
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="蛋白质化学"><a href="#蛋白质化学" class="headerlink" title="蛋白质化学"></a>蛋白质化学</h1><hr>
+<p>[TOC]</p>
+<hr>
+<h2 id="蛋白质的分子组成"><a href="#蛋白质的分子组成" class="headerlink" title="蛋白质的分子组成"></a>蛋白质的分子组成</h2><h3 id="蛋白质的化学组成"><a href="#蛋白质的化学组成" class="headerlink" title="蛋白质的化学组成"></a>蛋白质的化学组成</h3><ul>
+<li><p>主要:C,H,O,N,S</p>
+</li>
+<li><p>部分蛋白质含有微量的:P、Fe、Cu、Zn、Mn、Co、Mo、I等</p>
+</li>
+<li><p>各种蛋白质的含氮量很接近，平均为16%(可以用定氮法来推算样品中蛋白质的大致含量)</p>
+<blockquote>
+<p>每克样品含氮克数×6.25×100&#x3D;100g样品中蛋白质含量（g%）</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="蛋白质的基本组成单位——氨基酸"><a href="#蛋白质的基本组成单位——氨基酸" class="headerlink" title="蛋白质的基本组成单位——氨基酸"></a>蛋白质的基本组成单位——氨基酸</h3><p>蛋白质在酸、碱或蛋白酶的作用下，最终水解为游离氨基酸（amino acid）（蛋白质组成单体）</p>
+<h4 id="氨基酸的定义"><a href="#氨基酸的定义" class="headerlink" title="氨基酸的定义"></a>氨基酸的定义</h4><p>氨基酸是指含有氨基的羧酸</p>
+<h4 id="蛋白质中的氨基酸"><a href="#蛋白质中的氨基酸" class="headerlink" title="蛋白质中的氨基酸"></a>蛋白质中的氨基酸</h4><ul>
+<li>已知组成生物体蛋白质的氨基酸常见的有20种。其中19种为α－氨基酸，仅有一种为亚氨基酸。</li>
+<li>天然蛋白质水解获得的氨基酸除了甘氨酸（无手性碳原子）外均属于L-氨基酸。</li>
+</ul>
+<blockquote>
+<p>其中，α-氨基酸是一种结构，NH<sub>2</sub>-CH(R)-COOH,当R为H的时候，是没有手性碳的，除此之外都有手性，而L则是说明手性的。</p>
+</blockquote>
+<h4 id="氨基酸的分类"><a href="#氨基酸的分类" class="headerlink" title="氨基酸的分类"></a>氨基酸的分类</h4><ol>
+<li>根据R侧链的极性和电荷的不同，分为</li>
+</ol>
+<ul>
+<li>非极性氨基酸</li>
+<li>不带电荷极性氨基酸</li>
+<li>带正电荷极性氨基酸</li>
+<li>带负电荷极性氨基酸</li>
+</ul>
+<ol start="2">
+<li>按基团酸碱性来分</li>
+</ol>
+<ul>
+<li>中性</li>
+<li>酸性</li>
+<li>碱性</li>
+</ul>
+<ol start="3">
+<li>按R集团化学结构分</li>
+</ol>
+<ul>
+<li>脂肪族氨基酸</li>
+<li>芳香族氨基酸</li>
+<li>杂环族氨基酸</li>
+<li>杂环亚氨基酸</li>
+</ul>
+<h4 id="必需氨基酸"><a href="#必需氨基酸" class="headerlink" title="必需氨基酸"></a>必需氨基酸</h4><ul>
+<li><p>必需氨基酸：成年人所需的8种必需氨基酸：赖氨酸、色氨酸、苯丙氨酸、甲硫氨酸（也称蛋氨酸）、苏氨酸、异亮氨酸、亮氨酸、缬氨酸；</p>
+<blockquote>
+<p>(其中组氨酸和精氨酸由于人体内合成速度不快，不能满足人体的需要，成为半必需氨基酸)；</p>
+</blockquote>
+</li>
+<li><p>婴儿和儿童还需要组氨酸</p>
+</li>
+<li><p>非反刍动物还需要组氨酸和精氨酸</p>
+</li>
+</ul>
+<h4 id="氨基酸的理化性质"><a href="#氨基酸的理化性质" class="headerlink" title="氨基酸的理化性质"></a>氨基酸的理化性质</h4><h5 id="氨基酸的物理性质"><a href="#氨基酸的物理性质" class="headerlink" title="氨基酸的物理性质"></a>氨基酸的物理性质</h5><ul>
+<li>α-氨基酸为无色晶体，熔点较高。</li>
+<li>各种氨基酸在水中的溶解度差别很大。芳香族氨基酸（Tyr、Trp、Phe）有共轭双键，在近紫外区有光吸收能力，Tyr、Trp的吸收峰在280nm，Phe在265 nm。</li>
+<li>大多数蛋白质含Tyr、Trp残基，所以测定蛋白质溶液280nm的光吸收值，是分析溶液中蛋白质含量的快速简便的方法。</li>
+<li>除甘氨酸以外所有的氨基酸都有旋光性。</li>
+</ul>
+<h5 id="两性解离和等电点"><a href="#两性解离和等电点" class="headerlink" title="两性解离和等电点"></a>两性解离和等电点</h5><ul>
+<li><strong>两性解离</strong>：氨基酸分子既含有酸性的羧基（-COOH）又含有碱性的氨基（-NH₂），前者能提供质子变成 -COO<sup>-</sup>；后者能接受质子变成 -NH<sub>3</sub><sup>+</sup>。是两性电解质，其解离度与溶液的pH有关。</li>
+<li><strong>等电点</strong>：在某一pH的溶液中，氨基酸解离成阳离子和阴离子的趋势和程度相等，成为兼性离子，呈电中性，此时溶液的pH称为该氨基酸的等电点。</li>
+</ul>
+<blockquote>
+<p><strong>等电点的计算</strong>:</p>
+<ol>
+<li>普通氨基酸$\frac{\mathrm{pk_1}+\mathrm{pk_2}}{2}$</li>
+<li>酸性氨基酸与中性氨基酸$\frac{\mathrm{pk_1}+\mathrm{pk_R}}{2}$</li>
+<li>碱性氨基酸$\frac{\mathrm{pk_2}+\mathrm{pk_R}}{2}$</li>
+</ol>
+<ul>
+<li>其中$\mathrm{pk_1}$为羧基解离常数，$\mathrm{pk_2}$为氨基解离常数，$\mathrm{pk_R}$侧链R基解离常数。</li>
+</ul>
+</blockquote>
+<h5 id="化学反应"><a href="#化学反应" class="headerlink" title="化学反应"></a>化学反应</h5><p>α-氨基:</p>
+<ol>
+<li><strong>亚硝酸反应</strong>:α-氨基酸在室温下，与亚硝酸反应，生成相应的羟基酸和氮气。<blockquote>
+<p>反应中所放出的N2，一半来自氨基酸分子上的α-氨基氮，一半来自亚硝酸的氮，故可通过测定释放出N2的体积来推算氨基酸的含量</p>
+</blockquote>
+</li>
+<li><strong>Sanger反应</strong>:2,4-二硝基氟苯(DNFB&#x2F;FDNB)在弱碱条件下和α-氨基反应生成黄色的二硝基苯氨基酸（DNP-氨基酸）。<blockquote>
+<p>肽链末端的氨基也能进行这一反应，故此反应可用于肽链的N－末端分析。也可用于蛋白质一级结构的测定</p>
+</blockquote>
+</li>
+<li><strong>Edman反应</strong>:氨基酸中的α-氨基在弱碱性条件下与异硫氰酸苯酯（PITC）反应，生成相应的苯氨基硫甲酰氨基酸（PTC-氨基酸），PTC-氨基酸在无水酸中环化变为苯乙内酰硫脲衍生物（PTH-衍生物）。<blockquote>
+<p>PTH-衍生物在酸中很稳定，反应得到的产物无色，可用层析分离鉴定。此法也可用于肽的末端分析和多肽顺序分析。</p>
+</blockquote>
+</li>
+<li><strong>茚三酮反应</strong>:<ol>
+<li>α-氨基酸与水合茚三酮在弱酸性溶液中一起加热时生成蓝紫色的物质。</li>
+<li>脯氨酸和羧脯氨酸因其含有α-亚氨基，与茚三酮反应生成黄色物质。</li>
+<li>天冬酰胺由于含有游离的酰胺基，与茚三酮反应生成棕色产物。<blockquote>
+<p>此反应为α-氨基酸的特异性化学反应，反应时α-氨基酸上的α-氨基和羧基共同起作用。这一反应十分灵敏，几微克氨基酸就能显色。根据反应所生成的蓝紫色的深浅，在波长为540nm处可比色测定氨基酸的含量。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<p>α-羧基：</p>
+<ol>
+<li><strong>茚三酮反应</strong>:<ol>
+<li>α-氨基酸与水合茚三酮在弱酸性溶液中一起加热时生成蓝紫色的物质。</li>
+<li>脯氨酸和羧脯氨酸因其含有α-亚氨基，与茚三酮反应生成黄色物质。</li>
+<li>天冬酰胺由于含有游离的酰胺基，与茚三酮反应生成棕色产物。<blockquote>
+<p>此反应为α-氨基酸的特异性化学反应，反应时α-氨基酸上的α-氨基和羧基共同起作用。这一反应十分灵敏，几微克氨基酸就能显色。根据反应所生成的蓝紫色的深浅，在波长为540nm处可比色测定氨基酸的含量。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="肽"><a href="#肽" class="headerlink" title="肽"></a>肽</h3><hr>
+<hr>
+<h2 id="DNA与蛋白质的溶解原理："><a href="#DNA与蛋白质的溶解原理：" class="headerlink" title="DNA与蛋白质的溶解原理："></a>DNA与蛋白质的溶解原理：</h2><h3 id="DNA："><a href="#DNA：" class="headerlink" title="DNA："></a>DNA：</h3><h4 id="DNA结构因素："><a href="#DNA结构因素：" class="headerlink" title="DNA结构因素："></a>DNA结构因素：</h4><p>DNA的结构规整，外侧有带负电荷的磷酸。由于碱基堆积力(也即碱基疏水作用进而致使其不结合水，所以内部结合的力)，微溶于水。</p>
+<h4 id="在水溶液中大量溶解的情况"><a href="#在水溶液中大量溶解的情况" class="headerlink" title="在水溶液中大量溶解的情况"></a>在水溶液中大量溶解的情况</h4><ul>
+<li>依据现象知溶解后多为单链结构，又由于溶解不会破坏其结构，多在溶解前就为单链结构。</li>
+<li>其原理为单链状态下磷酸基团带负电荷，在水溶液中由于磷酸基团的排斥，所以单链无法形成双链。</li>
+</ul>
+<h4 id="加入盐："><a href="#加入盐：" class="headerlink" title="加入盐："></a>加入盐：</h4><p>加入盐后，最外侧由于磷酸都带负电荷的，正电荷包围着磷酸基团形成离子氛，中和或者屏蔽了负电荷的排斥，那么此时单链就易于相互碰撞，进而受碱基堆积力等影响聚合成双链</p>
+<h3 id="蛋白质："><a href="#蛋白质：" class="headerlink" title="蛋白质："></a>蛋白质：</h3><h4 id="蛋白质的结构因素："><a href="#蛋白质的结构因素：" class="headerlink" title="蛋白质的结构因素："></a>蛋白质的结构因素：</h4><p>蛋白质的结构不太规整，外侧有亲水基团也有疏水基团。</p>
+<h4 id="在水溶液中："><a href="#在水溶液中：" class="headerlink" title="在水溶液中："></a>在水溶液中：</h4><ul>
+<li>由于外部环境是水溶液，所以亲水基团总归还是在外侧居多的，不然蛋白质应该是难溶的，这和客观事实不符。</li>
+<li>由于内部具有一定的结构，所以由于该结构的限制，导致其不可能外侧都是亲水结构。</li>
+</ul>
+<h4 id="加入盐：-1"><a href="#加入盐：-1" class="headerlink" title="加入盐："></a>加入盐：</h4><h5 id="少量盐："><a href="#少量盐：" class="headerlink" title="少量盐："></a>少量盐：</h5><ul>
+<li>影响因素1.盐与水结合<br>当加入少量盐的时候，盐与水结合，但是整体上影响还是不会太大，可以忽略。</li>
+<li>影响因素2.盐的极性<br>与上述DNA阐述原理类似，通过形成离子氛来降低排斥力，进而使单位体积内可以溶解的蛋白质的量变多，进而微微提高蛋白质溶解度</li>
+</ul>
+<h5 id="大量盐："><a href="#大量盐：" class="headerlink" title="大量盐："></a>大量盐：</h5><p>此时盐与水大量结合，抢走了本该与蛋白质结合的水。既然水都少了，蛋白质单位体积内能溶解的数量再多，也受制于自由水量的减少，因此与之结合的水就也少了。所以溶解度降低。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 Hexo
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;John Doe
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

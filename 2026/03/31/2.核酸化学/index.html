@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Hexo</title>
+    <title>核酸化学 | Hexo</title>
     <meta name="author" content="John Doe" />
     <meta name="description" content="Normal _Italic_ **Strong**
 " />
@@ -43,7 +43,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -153,40 +155,17 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Hexo</h1>
-                <h3></h3>
-                <h5>Normal _Italic_ **Strong**
-</h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>核酸化学</h1>
     </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2026/03/31/4.%E9%85%B6/">
-        <h2 class="post-title">酶</h2>
-    </a>
-    <div class="category-and-date">
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/31
+        </span>
         
         <span class="category">
             <a href="/categories/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/">
@@ -197,302 +176,11 @@
             </a>
         </span>
         
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/31
-        </span>
-        
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="酶"><a href="#酶" class="headerlink" title="酶"></a>酶</h1><hr>
-<p>[TOC]</p>
-<hr>
-<h2 id="酶的一般性质"><a href="#酶的一般性质" class="headerlink" title="酶的一般性质"></a>酶的一般性质</h2><ul>
-<li>酶是生物催化剂</li>
-<li>酶催化的特性</li>
-<li>酶的化学本质</li>
-</ul>
-<h3 id="酶是生物催化剂"><a href="#酶是生物催化剂" class="headerlink" title="酶是生物催化剂"></a>酶是生物催化剂</h3><h4 id="生物催化剂"><a href="#生物催化剂" class="headerlink" title="生物催化剂"></a>生物催化剂</h4><h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><ul>
-<li>蛋白质类：酶(Enzyme)</li>
-<li>核酸类：核酶(Ribozyme)，脱氧核酶(Deoxyribozyme)</li>
-<li>模拟生物催化剂</li>
-<li>……</li>
-</ul>
-<h4 id="酶-1"><a href="#酶-1" class="headerlink" title="酶"></a>酶</h4><h5 id="酶的概念"><a href="#酶的概念" class="headerlink" title="酶的概念"></a>酶的概念</h5><p>酶是活细胞产生的，具有催化生物反应功能的蛋白质大分子及核酸。</p>
-<ol>
-<li>大多数酶是蛋白质</li>
-<li>某些RNA具有催化活性</li>
-<li>抗体酶：指具有催化功能的抗体分子，在抗体分子的可变区（即肽链的N端）是识别抗原的活性区域，这部分区域被赋予了酶的属性。</li>
-<li>某些DNA也有催化活性</li>
-</ol>
-<h5 id="酶的分类"><a href="#酶的分类" class="headerlink" title="酶的分类"></a>酶的分类</h5><p>根据酶的组成，可以将<strong>蛋白质类酶</strong>分为：</p>
-<ul>
-<li>根据酶的组成分为：<ul>
-<li>单纯蛋白质酶类：<ul>
-<li>蛋白酶，淀粉酶等</li>
-</ul>
-</li>
-<li>结合蛋白质酶类：<ul>
-<li>酶蛋白+辅因子<ul>
-<li>辅因子包含：金属离子，金属有机物，小分子有机物</li>
-</ul>
-</li>
-<li><blockquote>
-<p><strong>酶蛋白</strong>负责专一性</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p><strong>辅因子</strong>负责转移</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>根据酶的分子特点分为：<ul>
-<li><strong>单体酶</strong>：一般由一条肽链组成，只有三级结构</li>
-<li><strong>寡聚酶</strong>：指由2个或多个相同或不相同亚基组成的酶</li>
-<li><strong>多酶复合体</strong>：多种酶以非共价键相互嵌合</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="酶催化的特性"><a href="#酶催化的特性" class="headerlink" title="酶催化的特性"></a>酶催化的特性</h3><ul>
-<li>高催化效率</li>
-<li>高专一性</li>
-<li>易失活</li>
-<li>活性可调控</li>
-<li>有的酶需要辅助因子</li>
-</ul>
-<blockquote>
-<p><strong>与一般化学催化剂相比，酶的共性：</strong></p>
-<ul>
-<li>微量，高效</li>
-<li>不改变化学反应的平衡点</li>
-<li>降低反应活化能</li>
-</ul>
-</blockquote>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2026/03/31/4.%E9%85%B6/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/03/31/3.%E8%9B%8B%E7%99%BD%E8%B4%A8%E5%8C%96%E5%AD%A6/">
-        <h2 class="post-title">蛋白质化学</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                生物化学
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/31
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="蛋白质化学"><a href="#蛋白质化学" class="headerlink" title="蛋白质化学"></a>蛋白质化学</h1><hr>
-<p>[TOC]</p>
-<hr>
-<h2 id="蛋白质的分子组成"><a href="#蛋白质的分子组成" class="headerlink" title="蛋白质的分子组成"></a>蛋白质的分子组成</h2><h3 id="蛋白质的化学组成"><a href="#蛋白质的化学组成" class="headerlink" title="蛋白质的化学组成"></a>蛋白质的化学组成</h3><ul>
-<li><p>主要:C,H,O,N,S</p>
-</li>
-<li><p>部分蛋白质含有微量的:P、Fe、Cu、Zn、Mn、Co、Mo、I等</p>
-</li>
-<li><p>各种蛋白质的含氮量很接近，平均为16%(可以用定氮法来推算样品中蛋白质的大致含量)</p>
-<blockquote>
-<p>每克样品含氮克数×6.25×100&#x3D;100g样品中蛋白质含量（g%）</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h3 id="蛋白质的基本组成单位——氨基酸"><a href="#蛋白质的基本组成单位——氨基酸" class="headerlink" title="蛋白质的基本组成单位——氨基酸"></a>蛋白质的基本组成单位——氨基酸</h3><p>蛋白质在酸、碱或蛋白酶的作用下，最终水解为游离氨基酸（amino acid）（蛋白质组成单体）</p>
-<h4 id="氨基酸的定义"><a href="#氨基酸的定义" class="headerlink" title="氨基酸的定义"></a>氨基酸的定义</h4><p>氨基酸是指含有氨基的羧酸</p>
-<h4 id="蛋白质中的氨基酸"><a href="#蛋白质中的氨基酸" class="headerlink" title="蛋白质中的氨基酸"></a>蛋白质中的氨基酸</h4><ul>
-<li>已知组成生物体蛋白质的氨基酸常见的有20种。其中19种为α－氨基酸，仅有一种为亚氨基酸。</li>
-<li>天然蛋白质水解获得的氨基酸除了甘氨酸（无手性碳原子）外均属于L-氨基酸。</li>
-</ul>
-<blockquote>
-<p>其中，α-氨基酸是一种结构，NH<sub>2</sub>-CH(R)-COOH,当R为H的时候，是没有手性碳的，除此之外都有手性，而L则是说明手性的。</p>
-</blockquote>
-<h4 id="氨基酸的分类"><a href="#氨基酸的分类" class="headerlink" title="氨基酸的分类"></a>氨基酸的分类</h4><ol>
-<li>根据R侧链的极性和电荷的不同，分为</li>
-</ol>
-<ul>
-<li>非极性氨基酸</li>
-<li>不带电荷极性氨基酸</li>
-<li>带正电荷极性氨基酸</li>
-<li>带负电荷极性氨基酸</li>
-</ul>
-<ol start="2">
-<li>按基团酸碱性来分</li>
-</ol>
-<ul>
-<li>中性</li>
-<li>酸性</li>
-<li>碱性</li>
-</ul>
-<ol start="3">
-<li>按R集团化学结构分</li>
-</ol>
-<ul>
-<li>脂肪族氨基酸</li>
-<li>芳香族氨基酸</li>
-<li>杂环族氨基酸</li>
-<li>杂环亚氨基酸</li>
-</ul>
-<h4 id="必需氨基酸"><a href="#必需氨基酸" class="headerlink" title="必需氨基酸"></a>必需氨基酸</h4><ul>
-<li><p>必需氨基酸：成年人所需的8种必需氨基酸：赖氨酸、色氨酸、苯丙氨酸、甲硫氨酸（也称蛋氨酸）、苏氨酸、异亮氨酸、亮氨酸、缬氨酸；</p>
-<blockquote>
-<p>(其中组氨酸和精氨酸由于人体内合成速度不快，不能满足人体的需要，成为半必需氨基酸)；</p>
-</blockquote>
-</li>
-<li><p>婴儿和儿童还需要组氨酸</p>
-</li>
-<li><p>非反刍动物还需要组氨酸和精氨酸</p>
-</li>
-</ul>
-<h4 id="氨基酸的理化性质"><a href="#氨基酸的理化性质" class="headerlink" title="氨基酸的理化性质"></a>氨基酸的理化性质</h4><h5 id="氨基酸的物理性质"><a href="#氨基酸的物理性质" class="headerlink" title="氨基酸的物理性质"></a>氨基酸的物理性质</h5><ul>
-<li>α-氨基酸为无色晶体，熔点较高。</li>
-<li>各种氨基酸在水中的溶解度差别很大。芳香族氨基酸（Tyr、Trp、Phe）有共轭双键，在近紫外区有光吸收能力，Tyr、Trp的吸收峰在280nm，Phe在265 nm。</li>
-<li>大多数蛋白质含Tyr、Trp残基，所以测定蛋白质溶液280nm的光吸收值，是分析溶液中蛋白质含量的快速简便的方法。</li>
-<li>除甘氨酸以外所有的氨基酸都有旋光性。</li>
-</ul>
-<h5 id="两性解离和等电点"><a href="#两性解离和等电点" class="headerlink" title="两性解离和等电点"></a>两性解离和等电点</h5><ul>
-<li><strong>两性解离</strong>：氨基酸分子既含有酸性的羧基（-COOH）又含有碱性的氨基（-NH₂），前者能提供质子变成 -COO<sup>-</sup>；后者能接受质子变成 -NH<sub>3</sub><sup>+</sup>。是两性电解质，其解离度与溶液的pH有关。</li>
-<li><strong>等电点</strong>：在某一pH的溶液中，氨基酸解离成阳离子和阴离子的趋势和程度相等，成为兼性离子，呈电中性，此时溶液的pH称为该氨基酸的等电点。</li>
-</ul>
-<blockquote>
-<p><strong>等电点的计算</strong>:</p>
-<ol>
-<li>普通氨基酸$\frac{\mathrm{pk_1}+\mathrm{pk_2}}{2}$</li>
-<li>酸性氨基酸与中性氨基酸$\frac{\mathrm{pk_1}+\mathrm{pk_R}}{2}$</li>
-<li>碱性氨基酸$\frac{\mathrm{pk_2}+\mathrm{pk_R}}{2}$</li>
-</ol>
-<ul>
-<li>其中$\mathrm{pk_1}$为羧基解离常数，$\mathrm{pk_2}$为氨基解离常数，$\mathrm{pk_R}$侧链R基解离常数。</li>
-</ul>
-</blockquote>
-<h5 id="化学反应"><a href="#化学反应" class="headerlink" title="化学反应"></a>化学反应</h5><p>α-氨基:</p>
-<ol>
-<li><strong>亚硝酸反应</strong>:α-氨基酸在室温下，与亚硝酸反应，生成相应的羟基酸和氮气。<blockquote>
-<p>反应中所放出的N2，一半来自氨基酸分子上的α-氨基氮，一半来自亚硝酸的氮，故可通过测定释放出N2的体积来推算氨基酸的含量</p>
-</blockquote>
-</li>
-<li><strong>Sanger反应</strong>:2,4-二硝基氟苯(DNFB&#x2F;FDNB)在弱碱条件下和α-氨基反应生成黄色的二硝基苯氨基酸（DNP-氨基酸）。<blockquote>
-<p>肽链末端的氨基也能进行这一反应，故此反应可用于肽链的N－末端分析。也可用于蛋白质一级结构的测定</p>
-</blockquote>
-</li>
-<li><strong>Edman反应</strong>:氨基酸中的α-氨基在弱碱性条件下与异硫氰酸苯酯（PITC）反应，生成相应的苯氨基硫甲酰氨基酸（PTC-氨基酸），PTC-氨基酸在无水酸中环化变为苯乙内酰硫脲衍生物（PTH-衍生物）。<blockquote>
-<p>PTH-衍生物在酸中很稳定，反应得到的产物无色，可用层析分离鉴定。此法也可用于肽的末端分析和多肽顺序分析。</p>
-</blockquote>
-</li>
-<li><strong>茚三酮反应</strong>:<ol>
-<li>α-氨基酸与水合茚三酮在弱酸性溶液中一起加热时生成蓝紫色的物质。</li>
-<li>脯氨酸和羧脯氨酸因其含有α-亚氨基，与茚三酮反应生成黄色物质。</li>
-<li>天冬酰胺由于含有游离的酰胺基，与茚三酮反应生成棕色产物。<blockquote>
-<p>此反应为α-氨基酸的特异性化学反应，反应时α-氨基酸上的α-氨基和羧基共同起作用。这一反应十分灵敏，几微克氨基酸就能显色。根据反应所生成的蓝紫色的深浅，在波长为540nm处可比色测定氨基酸的含量。</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ol>
-<p>α-羧基：</p>
-<ol>
-<li><strong>茚三酮反应</strong>:<ol>
-<li>α-氨基酸与水合茚三酮在弱酸性溶液中一起加热时生成蓝紫色的物质。</li>
-<li>脯氨酸和羧脯氨酸因其含有α-亚氨基，与茚三酮反应生成黄色物质。</li>
-<li>天冬酰胺由于含有游离的酰胺基，与茚三酮反应生成棕色产物。<blockquote>
-<p>此反应为α-氨基酸的特异性化学反应，反应时α-氨基酸上的α-氨基和羧基共同起作用。这一反应十分灵敏，几微克氨基酸就能显色。根据反应所生成的蓝紫色的深浅，在波长为540nm处可比色测定氨基酸的含量。</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h3 id="肽"><a href="#肽" class="headerlink" title="肽"></a>肽</h3><hr>
-<hr>
-<h2 id="DNA与蛋白质的溶解原理："><a href="#DNA与蛋白质的溶解原理：" class="headerlink" title="DNA与蛋白质的溶解原理："></a>DNA与蛋白质的溶解原理：</h2><h3 id="DNA："><a href="#DNA：" class="headerlink" title="DNA："></a>DNA：</h3><h4 id="DNA结构因素："><a href="#DNA结构因素：" class="headerlink" title="DNA结构因素："></a>DNA结构因素：</h4><p>DNA的结构规整，外侧有带负电荷的磷酸。由于碱基堆积力(也即碱基疏水作用进而致使其不结合水，所以内部结合的力)，微溶于水。</p>
-<h4 id="在水溶液中大量溶解的情况"><a href="#在水溶液中大量溶解的情况" class="headerlink" title="在水溶液中大量溶解的情况"></a>在水溶液中大量溶解的情况</h4><ul>
-<li>依据现象知溶解后多为单链结构，又由于溶解不会破坏其结构，多在溶解前就为单链结构。</li>
-<li>其原理为单链状态下磷酸基团带负电荷，在水溶液中由于磷酸基团的排斥，所以单链无法形成双链。</li>
-</ul>
-<h4 id="加入盐："><a href="#加入盐：" class="headerlink" title="加入盐："></a>加入盐：</h4><p>加入盐后，最外侧由于磷酸都带负电荷的，正电荷包围着磷酸基团形成离子氛，中和或者屏蔽了负电荷的排斥，那么此时单链就易于相互碰撞，进而受碱基堆积力等影响聚合成双链</p>
-<h3 id="蛋白质："><a href="#蛋白质：" class="headerlink" title="蛋白质："></a>蛋白质：</h3><h4 id="蛋白质的结构因素："><a href="#蛋白质的结构因素：" class="headerlink" title="蛋白质的结构因素："></a>蛋白质的结构因素：</h4><p>蛋白质的结构不太规整，外侧有亲水基团也有疏水基团。</p>
-<h4 id="在水溶液中："><a href="#在水溶液中：" class="headerlink" title="在水溶液中："></a>在水溶液中：</h4><ul>
-<li>由于外部环境是水溶液，所以亲水基团总归还是在外侧居多的，不然蛋白质应该是难溶的，这和客观事实不符。</li>
-<li>由于内部具有一定的结构，所以由于该结构的限制，导致其不可能外侧都是亲水结构。</li>
-</ul>
-<h4 id="加入盐：-1"><a href="#加入盐：-1" class="headerlink" title="加入盐："></a>加入盐：</h4><h5 id="少量盐："><a href="#少量盐：" class="headerlink" title="少量盐："></a>少量盐：</h5><ul>
-<li>影响因素1.盐与水结合<br>当加入少量盐的时候，盐与水结合，但是整体上影响还是不会太大，可以忽略。</li>
-<li>影响因素2.盐的极性<br>与上述DNA阐述原理类似，通过形成离子氛来降低排斥力，进而使单位体积内可以溶解的蛋白质的量变多，进而微微提高蛋白质溶解度</li>
-</ul>
-<h5 id="大量盐："><a href="#大量盐：" class="headerlink" title="大量盐："></a>大量盐：</h5><p>此时盐与水大量结合，抢走了本该与蛋白质结合的水。既然水都少了，蛋白质单位体积内能溶解的数量再多，也受制于自由水量的减少，因此与之结合的水就也少了。所以溶解度降低。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2026/03/31/3.%E8%9B%8B%E7%99%BD%E8%B4%A8%E5%8C%96%E5%AD%A6/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/03/31/2.%E6%A0%B8%E9%85%B8%E5%8C%96%E5%AD%A6/">
-        <h2 class="post-title">核酸化学</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                生物化学
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/31
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="核酸化学"><a href="#核酸化学" class="headerlink" title="核酸化学"></a>核酸化学</h1><hr>
+    
+    <div class="content" v-pre>
+        <h1 id="核酸化学"><a href="#核酸化学" class="headerlink" title="核酸化学"></a>核酸化学</h1><hr>
 <p>[TOC]</p>
 <hr>
 <h2 id="核酸的化学组成"><a href="#核酸的化学组成" class="headerlink" title="核酸的化学组成"></a>核酸的化学组成</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>核酸是以核苷酸为基本单位所构成的生物大分子</p>
@@ -704,127 +392,13 @@
 <li><strong>⼤沟和⼩沟</strong>： 绕B-DNA双螺旋表⾯上出现的螺旋槽（沟），宽的沟称为⼤沟，窄沟称为⼩沟。⼤沟、⼩沟都是由 于碱基对堆积和糖-磷酸⾻架扭转造成的。</li>
 </ul>
 
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2026/03/31/2.%E6%A0%B8%E9%85%B8%E5%8C%96%E5%AD%A6/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/03/31/My-New-Post/">
-        <h2 class="post-title">My New Post</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/31
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2026/03/31/My-New-Post/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/03/31/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/31
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2026/03/31/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
     
     
     
     
-</div>
-
-    </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">John Doe</div>
-        <div class="description">
-            <p>Description<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
     
 </div>
 
@@ -856,6 +430,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
