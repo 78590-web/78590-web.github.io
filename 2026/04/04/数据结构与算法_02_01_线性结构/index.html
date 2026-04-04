@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>线性结构 | 78590の笔记窝</title>
+    <meta name="author" content="78590" />
+    <meta name="description" content="咕咕嘎嘎" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>78590の笔记窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;78590の笔记窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>线性结构</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/4/4
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                数据结构与算法
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>陈越数据结构笔记</p>
+<span id="more"></span>
+
+<h1 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h1><ul>
+<li>通过数组来实现(顺序存储)<ul>
+<li>直接表示所有的</li>
+<li>只表示非零项</li>
+</ul>
+</li>
+<li>通过链表来实现</li>
+<li>通过栈来实现</li>
+</ul>
+<hr>
+<h2 id="线性表及其实现"><a href="#线性表及其实现" class="headerlink" title="线性表及其实现"></a>线性表及其实现</h2><hr>
+<h3 id="线性表的定义"><a href="#线性表的定义" class="headerlink" title="线性表的定义"></a>线性表的定义</h3><p><strong>线性表</strong>：由同类型数据元素构成有序序列的线性结构。</p>
+<ul>
+<li>表中的元素个数称为线性表的长度</li>
+<li>线性表没有元素时候称为空表</li>
+<li>表起始位置称表头，表结束位置称表尾</li>
+</ul>
+<h3 id="线性表的抽象数据描述"><a href="#线性表的抽象数据描述" class="headerlink" title="线性表的抽象数据描述"></a>线性表的抽象数据描述</h3><p>用于帮助我们如何去设定这个线性表</p>
+<ol>
+<li>类型名称：线性表(List)</li>
+<li>数据对象集：线性表是n(&gt;&#x3D;0)个元素构成的有序序列(a<sub>1</sub>,a<sub>2</sub>,…………,a<sub>n</sub>)</li>
+<li>操作集：线性表L∈Last(某个类型)，整数i表示位置，元素X∈ElementType(某个类型)，线性表的基本操作如下：<ul>
+<li><code>List MakeEmpty()</code> 初始化一个空线性表L</li>
+<li><code>ElementType FindKth(int K,List L)</code> 根据位序K，返回相应元素</li>
+<li><code>int Find(ElementType X,List L)</code> 在线性表L中，查找X的第一次出现位置</li>
+<li><code>void Insert(ElementType X,int i,List L)</code> 在位序i前插入一个元素x(也就是x成为位序i上的元素，原位序i及以后的均后移)</li>
+<li><code>void Delete(int i,List L)</code>删除指定位序i上的元素</li>
+<li><code>int Length(List L)</code>返回线性表L的长度n</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="顺序存储实现线性表"><a href="#顺序存储实现线性表" class="headerlink" title="顺序存储实现线性表"></a>顺序存储实现线性表</h4><p>线性表顺序存储在物理意义上是连续的，是利用<strong>数组的连续存储空间顺序</strong>存放线性表的个元素</p>
+<p>eg.</p>
+<table>
+<thead>
+<tr>
+<th>下标i</th>
+<th>0</th>
+<th>1</th>
+<th>……</th>
+<th>i-1</th>
+<th>i</th>
+<th>……</th>
+<th>n-1</th>
+<th>……</th>
+<th>MAXSIZE-1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Data</td>
+<td>a<sub>1</sub></td>
+<td>a<sub>2</sub></td>
+<td>……</td>
+<td>a<sub>i</sub></td>
+<td>a<sub>i+1</sub></td>
+<td>……</td>
+<td>a<sub>n</sub></td>
+<td>……</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>其中的MAXSIZE是数组的最大值，而最后一个值就不一定是这个，所以我们是需要一个指针Last来指明最后一个元素在哪里的</p>
+</blockquote>
+<p><strong>示例</strong>:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>* <span class="title">List</span>;</span><span class="comment">//创建一个新的数据类型叫List，之所以要创建，是为了简化书写，我们当然可以每次都写 Struct LNode *PtrL1;Struct LNode *PtrL2等等，但是每次都写，太麻烦了，不如创建一个新的数据类型，用List Ptrl1,List Ptrl2等等简化书写。</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span><span class="comment">//定义一个结构体类型</span></span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    <span class="type">int</span> Last;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> <span class="title">L</span>;</span><span class="comment">/*声明一个LNode类型的变量L*/</span></span><br><span class="line">List PtrL;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在这类，这段代码的思路是，</p>
+</blockquote>
+<p>访问下标为i的元素：<code>L.Data[i-1]</code>或<code>Ptrl-&gt;Data[i]</code><br>线性表的长度：<code>L.Last+1</code>或<code>Ptrl-&gt;Last+1</code></p>
+<p>接下来，我们讲阐述如何在顺序存储中实现操作集</p>
+<hr>
+<h4 id="初始化-建立空的顺序表"><a href="#初始化-建立空的顺序表" class="headerlink" title="初始化(建立空的顺序表)"></a>初始化(建立空的顺序表)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>* <span class="title">List</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    <span class="type">int</span> Last;</span><br><span class="line"></span><br><span class="line">List <span class="title function_">MakeEmpty</span><span class="params">()</span>&#123;</span><br><span class="line">    List PtrL;</span><br><span class="line">    Ptrl = (List)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> LNode));</span><br><span class="line">    Ptrl-&gt;Last = <span class="number">-1</span>;<span class="comment">//因为是空的，计算机从0开始计数，所以Last最开始应该为-1</span></span><br><span class="line">    <span class="keyword">return</span> Ptrl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Find</span><span class="params">(ElementType X, List Ptrl)</span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= Ptrl-&gt;Last &amp;&amp; Ptrl-&gt;Data[i] != X)&#123;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i &gt; Ptrl-&gt;Last)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;<span class="comment">//如果没找到就返回-1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="顺序存储的插入与删除"><a href="#顺序存储的插入与删除" class="headerlink" title="顺序存储的插入与删除"></a>顺序存储的插入与删除</h4><h5 id="插入-在第i-1"><a href="#插入-在第i-1" class="headerlink" title="插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)"></a>插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)</h5><h6 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h6><ul>
+<li>移动<ul>
+<li>先把每个元素都向后移动一位，直到第i个位置空出来(使用循环实现，要从最后一个开始挪哦)</li>
+</ul>
+</li>
+<li>插入</li>
+</ul>
+<h6 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">insert</span><span class="params">(ElementType X, <span class="type">int</span> i, List Ptrl)</span><span class="comment">/*</span></span><br><span class="line"><span class="comment">注意，这里i表示的是位置，我们要说明插入位置不合法</span></span><br><span class="line"><span class="comment">i&lt;1是指你不能插入第零个元素，你当然可以插入第一个元素，但是第零个是不可能的</span></span><br><span class="line"><span class="comment">i &gt; Ptrl-&gt;Last+2是指你不可能插入到表的外面，Last是指下标，计算机从0开始计，所以Last+1是长度，那么Last+2就在表的外面，这是不可能的</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    <span class="keyword">if</span>(ptrl-&gt;Last == MAXSIZE<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;表满&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span> || i &gt; Ptrl-&gt;Last+<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;插入位置不合法&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(j=Ptrl-&gt;Last;j&gt;=i<span class="number">-1</span>;j--)&#123;</span><br><span class="line">        Ptrl-&gt;Data[j+<span class="number">1</span>] = Ptrl-&gt;Data[j];</span><br><span class="line">    &#125;</span><br><span class="line">    Ptrl-&gt;Data[i<span class="number">-1</span>] = X;</span><br><span class="line">    Ptrl-&gt;Last++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除-删除第i-1"><a href="#删除-删除第i-1" class="headerlink" title="删除(删除第i(1&lt;&#x3D;i&lt;&#x3D;n)个位置上的元素)"></a>删除(删除第i(1&lt;&#x3D;i&lt;&#x3D;n)个位置上的元素)</h5><h6 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h6><ul>
+<li>移动，后面的元素依次前移一位</li>
+</ul>
+<h6 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">delete</span><span class="params">(<span class="type">int</span> i, List Ptrl)</span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span> || i &gt; Ptrl-&gt;Last+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;删除位置不合法&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(j=i<span class="number">-1</span>;j&lt;Ptrl-&gt;Last;j++)&#123;</span><br><span class="line">        Ptrl-&gt;Data[j] = Ptrl-&gt;Data[j+<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    Ptrl-&gt;Last--;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 78590の笔记窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;78590
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
