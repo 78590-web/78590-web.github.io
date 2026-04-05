@@ -249,7 +249,13 @@
 <p>其中的MAXSIZE是数组的最大值，而最后一个值就不一定是这个，所以我们是需要一个指针Last来指明最后一个元素在哪里的</p>
 </blockquote>
 <p><strong>示例</strong>:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>* <span class="title">List</span>;</span><span class="comment">//创建一个新的数据类型叫List，之所以要创建，是为了简化书写，我们当然可以每次都写 Struct LNode *PtrL1;Struct LNode *PtrL2等等，但是每次都写，太麻烦了，不如创建一个新的数据类型，用List Ptrl1,List Ptrl2等等简化书写。</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span><span class="comment">//定义一个结构体类型</span></span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    <span class="type">int</span> Last;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> <span class="title">L</span>;</span><span class="comment">/*声明一个LNode类型的变量L*/</span></span><br><span class="line">List PtrL;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>* <span class="hljs-title">List</span>;</span><span class="hljs-comment">//创建一个新的数据类型叫List，之所以要创建，是为了简化书写，我们当然可以每次都写 Struct LNode *PtrL1;Struct LNode *PtrL2等等，但是每次都写，太麻烦了，不如创建一个新的数据类型，用List Ptrl1,List Ptrl2等等简化书写。</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span><span class="hljs-comment">//定义一个结构体类型</span>
+    ElementType Data[MAXSIZE];
+    <span class="hljs-type">int</span> Last;
+&#125;;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> <span class="hljs-title">L</span>;</span><span class="hljs-comment">/*声明一个LNode类型的变量L*/</span>
+List PtrL;</code></pre>
 
 <blockquote>
 <p>在这类，这段代码的思路是，</p>
@@ -257,9 +263,31 @@
 <p>访问下标为i的元素：<code>L.Data[i-1]</code>或<code>Ptrl-&gt;Data[i]</code><br>线性表的长度：<code>L.Last+1</code>或<code>Ptrl-&gt;Last+1</code></p>
 <p>接下来，我们讲阐述如何在顺序存储中实现操作集</p>
 <hr>
-<h4 id="初始化-建立空的顺序表"><a href="#初始化-建立空的顺序表" class="headerlink" title="初始化(建立空的顺序表)"></a>初始化(建立空的顺序表)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>* <span class="title">List</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    <span class="type">int</span> Last;</span><br><span class="line"></span><br><span class="line">List <span class="title function_">MakeEmpty</span><span class="params">()</span>&#123;</span><br><span class="line">    List PtrL;</span><br><span class="line">    Ptrl = (List)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> LNode));</span><br><span class="line">    Ptrl-&gt;Last = <span class="number">-1</span>;<span class="comment">//因为是空的，计算机从0开始计数，所以Last最开始应该为-1</span></span><br><span class="line">    <span class="keyword">return</span> Ptrl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="初始化-建立空的顺序表"><a href="#初始化-建立空的顺序表" class="headerlink" title="初始化(建立空的顺序表)"></a>初始化(建立空的顺序表)</h4><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>* <span class="hljs-title">List</span>;</span>
 
-<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Find</span><span class="params">(ElementType X, List Ptrl)</span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= Ptrl-&gt;Last &amp;&amp; Ptrl-&gt;Data[i] != X)&#123;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i &gt; Ptrl-&gt;Last)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;<span class="comment">//如果没找到就返回-1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span>
+    ElementType Data[MAXSIZE];
+    <span class="hljs-type">int</span> Last;
+
+List <span class="hljs-title function_">MakeEmpty</span><span class="hljs-params">()</span>&#123;
+    List PtrL;
+    Ptrl = (List)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> LNode));
+    Ptrl-&gt;Last = <span class="hljs-number">-1</span>;<span class="hljs-comment">//因为是空的，计算机从0开始计数，所以Last最开始应该为-1</span>
+    <span class="hljs-keyword">return</span> Ptrl;
+&#125;</code></pre>
+
+<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-title function_">Find</span><span class="hljs-params">(ElementType X, List Ptrl)</span>&#123;
+    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(i &lt;= Ptrl-&gt;Last &amp;&amp; Ptrl-&gt;Data[i] != X)&#123;
+        i++;
+    &#125;
+    <span class="hljs-keyword">if</span> (i &gt; Ptrl-&gt;Last)&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<span class="hljs-comment">//如果没找到就返回-1</span>
+    &#125;
+    <span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-keyword">return</span> i;
+    &#125;
+&#125;</code></pre>
 
 <h4 id="顺序存储的插入与删除"><a href="#顺序存储的插入与删除" class="headerlink" title="顺序存储的插入与删除"></a>顺序存储的插入与删除</h4><h5 id="插入-在第i-1"><a href="#插入-在第i-1" class="headerlink" title="插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)"></a>插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)</h5><h6 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h6><ul>
 <li>移动<ul>
@@ -268,12 +296,45 @@
 </li>
 <li>插入</li>
 </ul>
-<h6 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">insert</span><span class="params">(ElementType X, <span class="type">int</span> i, List Ptrl)</span><span class="comment">/*</span></span><br><span class="line"><span class="comment">注意，这里i表示的是位置，我们要说明插入位置不合法</span></span><br><span class="line"><span class="comment">i&lt;1是指你不能插入第零个元素，你当然可以插入第一个元素，但是第零个是不可能的</span></span><br><span class="line"><span class="comment">i &gt; Ptrl-&gt;Last+2是指你不可能插入到表的外面，Last是指下标，计算机从0开始计，所以Last+1是长度，那么Last+2就在表的外面，这是不可能的</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    <span class="keyword">if</span>(ptrl-&gt;Last == MAXSIZE<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;表满&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span> || i &gt; Ptrl-&gt;Last+<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;插入位置不合法&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(j=Ptrl-&gt;Last;j&gt;=i<span class="number">-1</span>;j--)&#123;</span><br><span class="line">        Ptrl-&gt;Data[j+<span class="number">1</span>] = Ptrl-&gt;Data[j];</span><br><span class="line">    &#125;</span><br><span class="line">    Ptrl-&gt;Data[i<span class="number">-1</span>] = X;</span><br><span class="line">    Ptrl-&gt;Last++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h6><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">insert</span><span class="hljs-params">(ElementType X, <span class="hljs-type">int</span> i, List Ptrl)</span><span class="hljs-comment">/*</span>
+<span class="hljs-comment">注意，这里i表示的是位置，我们要说明插入位置不合法</span>
+<span class="hljs-comment">i&lt;1是指你不能插入第零个元素，你当然可以插入第一个元素，但是第零个是不可能的</span>
+<span class="hljs-comment">i &gt; Ptrl-&gt;Last+2是指你不可能插入到表的外面，Last是指下标，计算机从0开始计，所以Last+1是长度，那么Last+2就在表的外面，这是不可能的</span>
+<span class="hljs-comment">*/</span>
+&#123;
+    <span class="hljs-type">int</span> j;
+    <span class="hljs-keyword">if</span>(ptrl-&gt;Last == MAXSIZE<span class="hljs-number">-1</span>)&#123;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;表满&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span> || i &gt; Ptrl-&gt;Last+<span class="hljs-number">2</span>)&#123;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;插入位置不合法&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    <span class="hljs-keyword">for</span>(j=Ptrl-&gt;Last;j&gt;=i<span class="hljs-number">-1</span>;j--)&#123;
+        Ptrl-&gt;Data[j+<span class="hljs-number">1</span>] = Ptrl-&gt;Data[j];
+    &#125;
+    Ptrl-&gt;Data[i<span class="hljs-number">-1</span>] = X;
+    Ptrl-&gt;Last++;
+    <span class="hljs-keyword">return</span>;
+&#125;
+&#125;</code></pre>
 
 <h5 id="删除-删除第i-1"><a href="#删除-删除第i-1" class="headerlink" title="删除(删除第i(1&lt;&#x3D;i&lt;&#x3D;n)个位置上的元素)"></a>删除(删除第i(1&lt;&#x3D;i&lt;&#x3D;n)个位置上的元素)</h5><h6 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h6><ul>
 <li>移动，后面的元素依次前移一位</li>
 </ul>
-<h6 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">delete</span><span class="params">(<span class="type">int</span> i, List Ptrl)</span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span> || i &gt; Ptrl-&gt;Last+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;删除位置不合法&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(j=i<span class="number">-1</span>;j&lt;Ptrl-&gt;Last;j++)&#123;</span><br><span class="line">        Ptrl-&gt;Data[j] = Ptrl-&gt;Data[j+<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    Ptrl-&gt;Last--;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h6><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">delete</span><span class="hljs-params">(<span class="hljs-type">int</span> i, List Ptrl)</span>&#123;
+    <span class="hljs-type">int</span> j;
+    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span> || i &gt; Ptrl-&gt;Last+<span class="hljs-number">1</span>)&#123;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;删除位置不合法&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    <span class="hljs-keyword">for</span>(j=i<span class="hljs-number">-1</span>;j&lt;Ptrl-&gt;Last;j++)&#123;
+        Ptrl-&gt;Data[j] = Ptrl-&gt;Data[j+<span class="hljs-number">1</span>];
+    &#125;
+    Ptrl-&gt;Last--;
+    <span class="hljs-keyword">return</span>;
+&#125;</code></pre>
     </div>
     
     
