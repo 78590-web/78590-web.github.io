@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>专业英语B_03_Plant_Studies_and_Botany_Disciplines | 78590の笔记窝</title>
+    <meta name="author" content="78590" />
+    <meta name="description" content="咕咕嘎嘎" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>78590の笔记窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;78590の笔记窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>专业英语B_03_Plant_Studies_and_Botany_Disciplines</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/4/7
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%ADB/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                专业英语B
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="专业英语B第三讲"><a href="#专业英语B第三讲" class="headerlink" title="专业英语B第三讲"></a>专业英语B第三讲</h3><span id="more"></span>
+
+<h1 id="Plant-Studies-and-Botany-Disciplines"><a href="#Plant-Studies-and-Botany-Disciplines" class="headerlink" title="Plant Studies and Botany Disciplines"></a>Plant Studies and Botany Disciplines</h1><hr>
+<h2 id="Studying-Plants"><a href="#Studying-Plants" class="headerlink" title="Studying Plants"></a>Studying Plants</h2><ul>
+<li>Early human interest in plants first centered around <strong>how they provide food + medicine</strong></li>
+<li><strong>This</strong> led to plant study becoming a science (<strong>search for knowledge of the natural world</strong>)</li>
+<li>Plant science → scientific method</li>
+</ul>
+<h2 id="Scientific-Method-General"><a href="#Scientific-Method-General" class="headerlink" title="Scientific Method(General)"></a>Scientific Method(General)</h2><ol>
+<li>Observation</li>
+<li>Question </li>
+<li>Hypothesis </li>
+<li>Experiment </li>
+<li>Conclusion </li>
+<li>Result</li>
+</ol>
+<h2 id="Major-Disciplines-of-Plant-Science"><a href="#Major-Disciplines-of-Plant-Science" class="headerlink" title="Major Disciplines of Plant Science"></a>Major Disciplines of Plant Science</h2><h3 id="Plant-Anatomy"><a href="#Plant-Anatomy" class="headerlink" title="Plant Anatomy"></a>Plant Anatomy</h3><ul>
+<li>The study of the <strong>internal structure</strong> of plants(<strong>植物解剖学</strong>)</li>
+<li>Developed during the <strong>1600’s</strong></li>
+<li><strong>Early</strong> plant anatomists discovered <strong>different tissues in stems and roots</strong></li>
+</ul>
+<h3 id="Plant-Physiology"><a href="#Plant-Physiology" class="headerlink" title="Plant Physiology"></a>Plant Physiology</h3><ul>
+<li>The study of <strong>plant functions</strong>(<strong>植物生理学</strong>)</li>
+<li>Developed during the <strong>1600’s</strong></li>
+<li><strong>Early</strong> plant physiologists discovered <strong>plant cells have very different functions from animal cells</strong></li>
+</ul>
+<h3 id="Plant-Taxonomy"><a href="#Plant-Taxonomy" class="headerlink" title="Plant Taxonomy"></a>Plant Taxonomy</h3><ul>
+<li>The study of <strong>describing, naming, and classifying organisms in the plant kingdom</strong>(<strong>植物分类学</strong>)</li>
+<li><strong>Oldest</strong> branch of plant study</li>
+<li>Still thousands of plants that <strong>have not yet been described or even discovered</strong></li>
+</ul>
+<h3 id="Plant-Geogrophy"><a href="#Plant-Geogrophy" class="headerlink" title="Plant Geogrophy"></a>Plant Geogrophy</h3><ul>
+<li>The study of <strong>how and why</strong> plants are <strong>distributed where they are</strong> (<strong>植物地理学</strong>)</li>
+<li>Developed in the <strong>1800’s</strong></li>
+</ul>
+<h3 id="Plant-Ecology"><a href="#Plant-Ecology" class="headerlink" title="Plant Ecology"></a>Plant Ecology</h3><ul>
+<li>The study of the <strong>interaction of plants</strong> with <strong>one another</strong> and with their <strong>environment</strong>(<strong>植物生态学</strong>)</li>
+<li>Developed in the <strong>1800’s</strong></li>
+</ul>
+<h3 id="Plant-Morphology"><a href="#Plant-Morphology" class="headerlink" title="Plant Morphology"></a>Plant Morphology</h3><ul>
+<li>The study of the <strong>form and structure</strong> of plants(<strong>植物形态学</strong>)</li>
+<li>Developed during the <strong>1800’s</strong></li>
+</ul>
+<h3 id="Genetics"><a href="#Genetics" class="headerlink" title="Genetics"></a>Genetics</h3><ul>
+<li>The study of heredity(<strong>遗传学</strong>)</li>
+<li>Developed in the early 1900’s</li>
+<li>First experiments began on pea plants</li>
+<li>Includes plant breeding (improved crop quality and yield)</li>
+</ul>
+<h3 id="Genomics"><a href="#Genomics" class="headerlink" title="Genomics"></a>Genomics</h3><ul>
+<li>Focuses on all genes and their function(<strong>基因组学</strong>)</li>
+<li>Impacts nearly all plant genetic research</li>
+<li>Genetics &#x3D; individual genes</li>
+<li>Genomics &#x3D; all genes together</li>
+</ul>
+<h3 id="Bioinformatics"><a href="#Bioinformatics" class="headerlink" title="Bioinformatics"></a>Bioinformatics</h3><ul>
+<li>Comines biology, statistics, and computer science.(<strong>生物信息学</strong>)</li>
+<li>Analyzes data sets from plant DNA sequencing</li>
+</ul>
+<h3 id="Cell-Biology"><a href="#Cell-Biology" class="headerlink" title="Cell Biology"></a>Cell Biology</h3><ul>
+<li>The study of cell structure and the function of those structures(<strong>细胞生物学</strong>)</li>
+<li>The mid 1900’s invention of the electron microscope led to big new discoveries </li>
+<li>Discovered how cells multiply and how cell internal components work</li>
+</ul>
+<h3 id="Economic-Botany-Ethnobotany"><a href="#Economic-Botany-Ethnobotany" class="headerlink" title="Economic Botany (Ethnobotany)"></a>Economic Botany (Ethnobotany)</h3><ul>
+<li>Studies the practical use of plants and plant products(<strong>经济植物学</strong>)</li>
+<li>Focuses on the use of plants for food, fiber, medicines, and other purposes</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hypothesis</td>
+<td>n. <strong>假设；猜想</strong>；猜测</td>
+</tr>
+<tr>
+<td>discipline</td>
+<td>n. 纪律；学科；训练；<strong>专业</strong>；自制力</td>
+</tr>
+<tr>
+<td>heredity</td>
+<td>n. <strong>遗传；遗传特征</strong></td>
+</tr>
+<tr>
+<td>taxonomy</td>
+<td>n. <strong>分类法</strong>；分类学；分类系统</td>
+</tr>
+<tr>
+<td>morphology</td>
+<td>n. <strong>形态学</strong>；词法，形态论</td>
+</tr>
+<tr>
+<td>distribute</td>
+<td></td>
+</tr>
+<tr>
+<td>genomics</td>
+<td></td>
+</tr>
+<tr>
+<td>genetics</td>
+<td></td>
+</tr>
+<tr>
+<td>bioinformatics</td>
+<td></td>
+</tr>
+<tr>
+<td>ethnobotany</td>
+<td></td>
+</tr>
+<tr>
+<td>anatomy</td>
+<td></td>
+</tr>
+<tr>
+<td>botany</td>
+<td></td>
+</tr>
+<tr>
+<td>science</td>
+<td></td>
+</tr>
+<tr>
+<td>structure</td>
+<td></td>
+</tr>
+<tr>
+<td>physiology</td>
+<td></td>
+</tr>
+<tr>
+<td>geography</td>
+<td></td>
+</tr>
+<tr>
+<td>scientific method</td>
+<td></td>
+</tr>
+<tr>
+<td>organism</td>
+<td></td>
+</tr>
+<tr>
+<td>internal</td>
+<td></td>
+</tr>
+<tr>
+<td>ecology</td>
+<td></td>
+</tr>
+<tr>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td>discover</td>
+<td></td>
+</tr>
+<tr>
+<td>species</td>
+<td></td>
+</tr>
+<tr>
+<td>breeding</td>
+<td></td>
+</tr>
+<tr>
+<td>gene</td>
+<td></td>
+</tr>
+<tr>
+<td>components</td>
+<td></td>
+</tr>
+<tr>
+<td>microscope</td>
+<td></td>
+</tr>
+<tr>
+<td>ethnobotany</td>
+<td></td>
+</tr>
+<tr>
+<td>practical</td>
+<td></td>
+</tr>
+<tr>
+<td>obervation</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td></td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 78590の笔记窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;78590
+        </div>
+        <div>
+            Based on the <a href="https://hexo.io">Hexo Engine</a> &amp;
+            <a href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
