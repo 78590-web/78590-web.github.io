@@ -8,6 +8,7 @@ const app = Vue.createApp({
             menuColor: false,
             scrollTop: 0,
             renderers: [],
+            mermaidTheme: "<%- theme.mermaid.theme || 'default' %>",
         };
     },
     created() {

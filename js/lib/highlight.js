@@ -13,8 +13,12 @@ mixins.highlight = {
         highlight() {
             let codes = document.querySelectorAll("pre");
             for (let i of codes) {
+                // 跳过 mermaid 容器，避免被当作代码块处理
+                if (i.classList.contains("mermaid")) continue;
                 let code = i.textContent;
                 let language = [...i.classList, ...i.firstChild.classList][0] || "plaintext";
+                // 跳过 mermaid 语言标记的代码块
+                if (language === "mermaid") continue;
                 let highlighted;
                 try {
                     highlighted = hljs.highlight(code, { language }).value;

@@ -780,6 +780,19 @@ code,
 .language {
     font-family: "Fira Code", "Noto Sans SC", monospace;
 }
+.content .mermaid {
+    background: #fff;
+    border: 1px solid #ebeef5;
+    border-radius: 15px;
+    box-shadow: 0 2px 12px 0 #0000001a;
+    margin: 25px 0;
+    padding: 20px;
+    text-align: center;
+}
+.content .mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
 table:not(.hljs-ln) {
     margin: 15px 0;
 }
