@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>酶 | 78590の笔记窝</title>
+    <meta name="author" content="78590" />
+    <meta name="description" content="咕咕嘎嘎" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="https://s4.zstatic.net/ajax/libs/mermaid/10.9.0/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>78590の笔记窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;78590の笔记窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>酶</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/4/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                生物化学
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="酶"><a href="#酶" class="headerlink" title="酶"></a>酶</h1><h2 id="一、酶的本质与特点"><a href="#一、酶的本质与特点" class="headerlink" title="一、酶的本质与特点"></a>一、酶的本质与特点</h2><h3 id="1-1-酶的概念"><a href="#1-1-酶的概念" class="headerlink" title="1.1 酶的概念"></a>1.1 酶的概念</h3><ul>
+<li>定义：由活细胞合成的、对其特异底物起高效催化作用的生物催化剂</li>
+<li>化学本质：主要——蛋白质（绝大多数）；少数——RNA（核酶，Cech 1981年发现）、抗体酶、某些DNA</li>
+<li>考点提示：核酶不是蛋白质，是唯一的非蛋白酶</li>
+</ul>
+<h3 id="1-2-酶的作用特点"><a href="#1-2-酶的作用特点" class="headerlink" title="1.2 酶的作用特点"></a>1.2 酶的作用特点</h3><p><strong>共性：</strong></p>
+<ul>
+<li>反应前后质和量不变</li>
+<li>只催化热力学允许的反应</li>
+<li>不改变反应的平衡点</li>
+<li>降低反应的活化能</li>
+</ul>
+<p><strong>特性（核心考点）：</strong></p>
+<ol>
+<li>极高的催化效率：比非催化高10⁸～10²⁰倍，比一般催化剂高10⁷～10¹³倍</li>
+<li>高度的专一性（特异性）：一种酶只作用于一种或一类底物</li>
+<li>活性的可调节性：受底物&#x2F;产物浓度、激素、共价修饰等调节</li>
+<li>高度的不稳定性：易受理化因素影响而失活</li>
+</ol>
+<hr>
+<h2 id="二、酶的组成与结构"><a href="#二、酶的组成与结构" class="headerlink" title="二、酶的组成与结构"></a>二、酶的组成与结构</h2><h3 id="2-1-按分子组成分类"><a href="#2-1-按分子组成分类" class="headerlink" title="2.1 按分子组成分类"></a>2.1 按分子组成分类</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>单纯酶</strong></td>
+<td>仅由蛋白质构成，水解产物只有氨基酸</td>
+</tr>
+<tr>
+<td><strong>结合酶（全酶）</strong></td>
+<td>酶蛋白 + 辅助因子 &#x3D; 全酶</td>
+</tr>
+</tbody></table>
+<ul>
+<li>酶蛋白：决定反应的<strong>特异性</strong>（专一性）</li>
+<li>辅助因子：决定反应的<strong>类型与性质</strong></li>
+</ul>
+<p><strong>辅酶 vs 辅基（高频考点）：</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>辅酶</th>
+<th>辅基</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>结合方式</td>
+<td>结合疏松，非共价键</td>
+<td>结合紧密，共价键</td>
+</tr>
+<tr>
+<td>透析除去</td>
+<td>可以（使酶丧失活性）</td>
+<td>不可以</td>
+</tr>
+</tbody></table>
+<ul>
+<li>辅助因子来源：金属离子（Cu²⁺, Zn²⁺等）；小分子有机物（多为B族维生素衍生物，如NAD⁺, FAD, CoA等）</li>
+</ul>
+<h3 id="2-2-按分子结构分类"><a href="#2-2-按分子结构分类" class="headerlink" title="2.2 按分子结构分类"></a>2.2 按分子结构分类</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>单体酶</strong></td>
+<td>仅一条多肽链（三级结构），分子量13,000-35,000</td>
+</tr>
+<tr>
+<td><strong>寡聚酶</strong></td>
+<td>含2个或以上亚基（非共价键），分子量35,000-几百万</td>
+</tr>
+<tr>
+<td><strong>多酶复合体</strong></td>
+<td>多种酶靠非共价键契合，依次催化连续反应</td>
+</tr>
+<tr>
+<td><strong>多功能酶&#x2F;串联酶</strong></td>
+<td>一条多肽链上具有多种不同催化功能</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-酶的活性中心"><a href="#2-3-酶的活性中心" class="headerlink" title="2.3 酶的活性中心"></a>2.3 酶的活性中心</h3><ul>
+<li>定义：酶分子表面必需基团集中并形成一定空间构象的区域</li>
+<li><strong>结合部位</strong>：决定酶的专一性</li>
+<li><strong>催化部位</strong>：决定酶的催化能力</li>
+<li>常见必需基团：组氨酸咪唑基、丝氨酸羟基、半胱氨酸巯基、天冬氨酸羧基</li>
+</ul>
+<hr>
+<h2 id="三、酶的催化机理与专一性"><a href="#三、酶的催化机理与专一性" class="headerlink" title="三、酶的催化机理与专一性"></a>三、酶的催化机理与专一性</h2><h3 id="3-1-酶的专一性分类"><a href="#3-1-酶的专一性分类" class="headerlink" title="3.1 酶的专一性分类"></a>3.1 酶的专一性分类</h3><p><strong>结构专一性：</strong></p>
+<ul>
+<li>绝对专一性：只能催化一种底物发生一种反应（如脲酶）</li>
+<li>相对专一性（族&#x2F;基团专一性）：作用于一类化合物或一种化学键</li>
+</ul>
+<p><strong>立体异构专一性：</strong></p>
+<ul>
+<li>旋光异构专一性：只作用于一种旋光异构体（如L-氨基酸氧化酶）</li>
+<li>几何异构专一性：只作用于顺式或反式</li>
+</ul>
+<h3 id="3-2-专一性假说"><a href="#3-2-专一性假说" class="headerlink" title="3.2 专一性假说"></a>3.2 专一性假说</h3><table>
+<thead>
+<tr>
+<th>学说</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>锁钥学说</td>
+<td>酶与底物结构严格互补，刚性匹配</td>
+</tr>
+<tr>
+<td><strong>诱导契合学说</strong>（重点）</td>
+<td>酶活性中心具有柔性，底物诱导酶构象改变，使有关基团正确排列定向，互相契合</td>
+</tr>
+<tr>
+<td>三点附着模型</td>
+<td>解释立体异构专一性，底物需3个结合点都匹配</td>
+</tr>
+</tbody></table>
+<h3 id="3-3-酶高效催化的机制"><a href="#3-3-酶高效催化的机制" class="headerlink" title="3.3 酶高效催化的机制"></a>3.3 酶高效催化的机制</h3><p>中间产物学说：E + S ⇌ ES → E + P</p>
+<p><strong>高效催化因素：</strong></p>
+<ul>
+<li>邻近与定向效应：提高有效浓度，反应基团正确取位</li>
+<li>底物形变与诱导契合：底物敏感键受张力形变，接近过渡态</li>
+<li>酸碱催化：如His咪唑基（pK 6.0-7.0）在生理pH下既是质子供体又是受体</li>
+<li>共价催化：形成不稳定的共价中间物</li>
+<li>低介电区域（微环境）：活性中心疏水，不利于水化膜形成</li>
+</ul>
+<hr>
+<h2 id="四、酶促反应动力学（计算与分析核心）"><a href="#四、酶促反应动力学（计算与分析核心）" class="headerlink" title="四、酶促反应动力学（计算与分析核心）"></a>四、酶促反应动力学（计算与分析核心）</h2><h3 id="4-1-底物浓度-S-的影响"><a href="#4-1-底物浓度-S-的影响" class="headerlink" title="4.1 底物浓度 [S] 的影响"></a>4.1 底物浓度 [S] 的影响</h3><p>曲线：矩形双曲线</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[S]低</td>
+<td>V与[S]成正比（一级反应）</td>
+</tr>
+<tr>
+<td>[S]增高</td>
+<td>V增加减慢（混合级反应）</td>
+</tr>
+<tr>
+<td>[S]极高</td>
+<td>V达最大值Vmax不变（零级反应，酶被饱和）</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-米氏方程与米氏常数"><a href="#4-2-米氏方程与米氏常数" class="headerlink" title="4.2 米氏方程与米氏常数"></a>4.2 米氏方程与米氏常数</h3><p><strong>米氏方程：</strong><br>$$v &#x3D; \frac{V_{max}[S]}{K_m + [S]}$$</p>
+<p><strong>米氏常数 Km（绝对核心考点）：</strong></p>
+<ul>
+<li>定义：反应速度达到最大反应速度一半时的底物浓度</li>
+<li>意义：是酶的特征物理常数（只与酶性质、底物、pH、温度有关，<strong>与酶浓度无关</strong>）</li>
+<li>Km越小，亲和力越大；Km越大，亲和力越小</li>
+</ul>
+<p><strong>计算考点：</strong></p>
+<table>
+<thead>
+<tr>
+<th>[S]</th>
+<th>v</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[S] &#x3D; 0.1Km</td>
+<td>v &#x3D; 9.1% Vmax</td>
+</tr>
+<tr>
+<td>[S] &#x3D; 0.5Km</td>
+<td>v &#x3D; 33.3% Vmax</td>
+</tr>
+<tr>
+<td>[S] &#x3D; 2Km</td>
+<td>v &#x3D; 67% Vmax</td>
+</tr>
+</tbody></table>
+<p>双倒数作图（Lineweaver-Burk）：1&#x2F;V对1&#x2F;[S]作图，y轴截距&#x3D;1&#x2F;Vmax，x轴截距&#x3D;-1&#x2F;Km</p>
+<h3 id="4-3-其他因素的影响"><a href="#4-3-其他因素的影响" class="headerlink" title="4.3 其他因素的影响"></a>4.3 其他因素的影响</h3><ul>
+<li><strong>酶浓度 [E]</strong>：[S]饱和时，V与[E]成正比</li>
+<li><strong>温度</strong>：双重影响（有最适温度，非特征常数）</li>
+<li><strong>pH</strong>：有最适pH（非特征常数）</li>
+<li>胃蛋白酶最适pH ~1.8，肝精氨酸酶 ~9.8</li>
+</ul>
+<h3 id="4-4-抑制剂的影响（必考）"><a href="#4-4-抑制剂的影响（必考）" class="headerlink" title="4.4 抑制剂的影响（必考）"></a>4.4 抑制剂的影响（必考）</h3><table>
+<thead>
+<tr>
+<th>抑制剂类型</th>
+<th>Km</th>
+<th>Vmax</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>竞争性抑制</strong></td>
+<td>不变（表观Km↑）</td>
+<td>不变</td>
+<td>磺胺类药物（竞争对氨基苯甲酸）</td>
+</tr>
+<tr>
+<td><strong>非竞争性抑制</strong></td>
+<td>不变</td>
+<td>减小</td>
+<td>重金属离子</td>
+</tr>
+<tr>
+<td><strong>反竞争性抑制</strong></td>
+<td>减小</td>
+<td>减小</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="五、酶的活性调节"><a href="#五、酶的活性调节" class="headerlink" title="五、酶的活性调节"></a>五、酶的活性调节</h2><table>
+<thead>
+<tr>
+<th>调节方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>别构调节</strong></td>
+<td>效应物与别构部位结合，调节酶活性</td>
+</tr>
+<tr>
+<td><strong>共价修饰调节</strong></td>
+<td>磷酸化&#x2F;去磷酸化（最常见）、乙酰化、甲基化等</td>
+</tr>
+<tr>
+<td><strong>酶原激活</strong></td>
+<td>无活性的酶原 → 有活性的酶（切割肽键，构象改变）</td>
+</tr>
+<tr>
+<td><strong>同工酶</strong></td>
+<td>催化相同反应，但分子结构和理化性质不同</td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 78590の笔记窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;78590
+        </div>
+        <div>
+            Based on the <a href="https://hexo.io">Hexo Engine</a> &amp;
+            <a href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    
+    <script src="/js/lib/mermaid.js"></script>
+    
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

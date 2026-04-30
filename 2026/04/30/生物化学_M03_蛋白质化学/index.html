@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>蛋白质化学复习 | 78590の笔记窝</title>
+    <meta name="author" content="78590" />
+    <meta name="description" content="咕咕嘎嘎" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="https://s4.zstatic.net/ajax/libs/mermaid/10.9.0/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>78590の笔记窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;78590の笔记窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>蛋白质化学复习</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/4/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                生物化学
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>蛋白质化学复习</p>
+<span id="more"></span>
+
+<h1 id="蛋白质"><a href="#蛋白质" class="headerlink" title="蛋白质"></a>蛋白质</h1><h2 id="1-蛋白质概述与元素组成"><a href="#1-蛋白质概述与元素组成" class="headerlink" title="1. 蛋白质概述与元素组成"></a>1. 蛋白质概述与元素组成</h2><h3 id="1-1-蛋白质的生物学意义"><a href="#1-1-蛋白质的生物学意义" class="headerlink" title="1.1 蛋白质的生物学意义"></a>1.1 蛋白质的生物学意义</h3><ul>
+<li>生命活动物质基础：细胞中含量最丰富、功能最多的生物大分子</li>
+<li>核心功能：催化、运输、免疫、调节、结构支持等</li>
+</ul>
+<h3 id="1-2-元素组成"><a href="#1-2-元素组成" class="headerlink" title="1.2 元素组成"></a>1.2 元素组成</h3><ul>
+<li>主要元素：C、H、O、N、S</li>
+<li>特征元素：N（平均含氮量 16%）→ 凯氏定氮法：蛋白质含氮量 &#x3D; 样品含氮量 × 6.25</li>
+<li>特异元素：S（存在于含硫氨基酸中）</li>
+</ul>
+<hr>
+<h2 id="2-基本组成单位：氨基酸"><a href="#2-基本组成单位：氨基酸" class="headerlink" title="2. 基本组成单位：氨基酸"></a>2. 基本组成单位：氨基酸</h2><h3 id="2-1-氨基酸的结构通式"><a href="#2-1-氨基酸的结构通式" class="headerlink" title="2.1 氨基酸的结构通式"></a>2.1 氨基酸的结构通式</h3><ul>
+<li>L-α-氨基酸：构成天然蛋白质的20种基本氨基酸均为L-α-氨基酸（甘氨酸除外）</li>
+<li>结构特点：都有一个氨基和一个羧基连在同一个α-碳原子上；侧链（R基）不同决定氨基酸的种类与性质</li>
+<li>甘氨酸特例：R基为H，无手性碳原子，无旋光性</li>
+</ul>
+<h3 id="2-2-氨基酸的分类"><a href="#2-2-氨基酸的分类" class="headerlink" title="2.2 氨基酸的分类"></a>2.2 氨基酸的分类</h3><p><strong>按R基极性&#x2F;酸碱性分类：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>氨基酸（三字母缩写）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>非极性疏水性氨基酸</td>
+<td>Ala, Val, Leu, Ile, Pro, Phe, Trp, Met</td>
+</tr>
+<tr>
+<td>极性中性氨基酸</td>
+<td>Gly, Ser, Thr, Cys, Asn, Gln, Tyr</td>
+</tr>
+<tr>
+<td>酸性氨基酸</td>
+<td>Asp, Glu（含两个羧基）</td>
+</tr>
+<tr>
+<td>碱性氨基酸</td>
+<td>Lys, Arg, His（含两个以上氨基或亚氨基）</td>
+</tr>
+</tbody></table>
+<p><strong>必需氨基酸（8种）</strong>：人体不能合成，必须由食物供给。</p>
+<blockquote>
+<p>口诀：<strong>假设来写一本书</strong>（甲硫&#x2F;苏Thr、赖Lys、缬Val、亮Leu、异亮Ile、苯丙Phe、色Trp）</p>
+</blockquote>
+<p><strong>特殊氨基酸：</strong></p>
+<ul>
+<li>脯氨酸：L-α-亚氨基酸，常引起α-螺旋终止</li>
+<li>半胱氨酸：含巯基(-SH)，可形成二硫键</li>
+</ul>
+<h4 id="2-3-氨基酸的理化性质"><a href="#2-3-氨基酸的理化性质" class="headerlink" title="2.3 氨基酸的理化性质"></a>2.3 氨基酸的理化性质</h4><ul>
+<li><strong>两性解离与等电点</strong>：两性离子&#x2F;兼性离子 &#x3D; 同一分子上带等量正负电荷；等电点(pI) &#x3D; 净电荷为零时的溶液pH</li>
+<li><strong>紫外吸收</strong>：Trp, Tyr, Phe 含共轭双键，最大吸收峰 <strong>280nm</strong></li>
+<li><strong>化学反应</strong>：茚三酮反应 → 蓝紫色化合物（氨基酸定量定性分析）</li>
+</ul>
+<hr>
+<h2 id="3-肽与肽键"><a href="#3-肽与肽键" class="headerlink" title="3. 肽与肽键"></a>3. 肽与肽键</h2><h3 id="3-1-肽键"><a href="#3-1-肽键" class="headerlink" title="3.1 肽键"></a>3.1 肽键</h3><p>定义：前一个氨基酸的α-羧基与后一个氨基酸的α-氨基脱水形成的酰胺键 (-CO-NH-)。<br>性质：具有部分双键性质，不能自由旋转。</p>
+<h3 id="3-2-肽平面（酰胺平面）"><a href="#3-2-肽平面（酰胺平面）" class="headerlink" title="3.2 肽平面（酰胺平面）"></a>3.2 肽平面（酰胺平面）</h3><p>定义：参与肽键的C、O、N、H及相连的两个α-碳原子共处一个刚性平面。</p>
+<ul>
+<li>二面角 φ (Phi)：绕Cα-N键旋转的角度</li>
+<li>二面角 ψ (Psi)：绕Cα-C键旋转的角度</li>
+</ul>
+<h3 id="3-3-相关概念"><a href="#3-3-相关概念" class="headerlink" title="3.3 相关概念"></a>3.3 相关概念</h3><ul>
+<li><strong>氨基酸残基</strong>：肽链中因脱水而不完整的氨基酸单位</li>
+<li><strong>肽链方向</strong>：N端（自由氨基）→ C端（自由羧基）</li>
+<li><strong>天然活性肽</strong>：谷胱甘肽（GSH，抗氧化）、脑啡肽（镇痛）等</li>
+</ul>
+<hr>
+<h2 id="4-蛋白质的分子结构"><a href="#4-蛋白质的分子结构" class="headerlink" title="4.蛋白质的分子结构"></a>4.蛋白质的分子结构</h2><h3 id="4-1-构型与构象"><a href="#4-1-构型与构象" class="headerlink" title="4.1 构型与构象"></a>4.1 构型与构象</h3><table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>构型</strong></td>
+<td>不对称碳原子上原子&#x2F;基团的空间排布（如D&#x2F;L型）。转变需断裂共价键</td>
+</tr>
+<tr>
+<td><strong>构象</strong></td>
+<td>单键旋转产生的原子空间排布。转变不涉及共价键断裂</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-一级结构"><a href="#4-2-一级结构" class="headerlink" title="4.2 一级结构"></a>4.2 一级结构</h3><p>定义：多肽链中氨基酸的排列顺序及二硫键的位置。</p>
+<ul>
+<li>维系键：肽键（主）、二硫键</li>
+<li>意义：一级结构决定高级结构与功能（信息基础）</li>
+</ul>
+<h3 id="4-3-二级结构"><a href="#4-3-二级结构" class="headerlink" title="4.3 二级结构"></a>4.3 二级结构</h3><p>定义：肽链主链原子的局部空间排列（不涉及侧链R基构象）。<br>维系键：氢键。</p>
+<p><strong>主要形式：</strong></p>
+<table>
+<thead>
+<tr>
+<th>二级结构</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>α-螺旋</strong></td>
+<td>右手螺旋；3.6个氨基酸&#x2F;圈，螺距0.54nm；链内氢键(n→n+4)；侧链R基伸向外侧。破坏因素：Pro（亚氨基无H）、连续Gly、连续同种电荷</td>
+</tr>
+<tr>
+<td><strong>β-折叠</strong></td>
+<td>肽链近乎完全伸展；平行或反平行排列；链间氢键与肽链垂直；残基轴心距0.35nm</td>
+</tr>
+<tr>
+<td><strong>β-转角</strong></td>
+<td>多肽链180°回折；第1与第4残基形成氢键</td>
+</tr>
+<tr>
+<td><strong>无规卷曲</strong></td>
+<td>无规律盘绕</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>超二级结构（模体）</strong>：相邻二级结构的有规则组合（如锌指、亮氨酸拉链）</li>
+<li><strong>结构域</strong>：球状蛋白的折叠单位，独立三维实体</li>
+</ul>
+<h3 id="4-4-三级结构"><a href="#4-4-三级结构" class="headerlink" title="4.4 三级结构"></a>4.4 三级结构</h3><p>定义：整条多肽链所有原子（主链+侧链）在三维空间的排布。<br>维系键（次级键为主）：</p>
+<ul>
+<li>疏水键（最主要）</li>
+<li>氢键、离子键、范德华力</li>
+<li>也可涉及二硫键（共价键）</li>
+</ul>
+<h3 id="4-5-四级结构"><a href="#4-5-四级结构" class="headerlink" title="4.5 四级结构"></a>4.5 四级结构</h3><p>定义：多亚基蛋白质中各亚基的空间排布及接触部位布局。</p>
+<ul>
+<li>亚基：具有独立三级结构的多肽链，单独存在时通常无活性</li>
+<li>维系键：非共价键（疏水作用为主，其次是氢键和离子键）</li>
+</ul>
+<hr>
+<h2 id="5-蛋白质结构与功能的关系"><a href="#5-蛋白质结构与功能的关系" class="headerlink" title="5. 蛋白质结构与功能的关系"></a>5. 蛋白质结构与功能的关系</h2><h3 id="5-1-一级结构与功能的关系"><a href="#5-1-一级结构与功能的关系" class="headerlink" title="5.1 一级结构与功能的关系"></a>5.1 一级结构与功能的关系</h3><p>核糖核酸酶变性复性实验证明：只要一级结构不被破坏，去除变性因素后蛋白质可恢复空间构象与活性。</p>
+<h3 id="5-2-空间结构与功能的关系"><a href="#5-2-空间结构与功能的关系" class="headerlink" title="5.2 空间结构与功能的关系"></a>5.2 空间结构与功能的关系</h3><ul>
+<li><strong>别构蛋白</strong>：一个亚基构象改变影响其他亚基（变构调节）</li>
+<li><strong>结构域</strong>是蛋白质的功能基础</li>
+</ul>
+<hr>
+<h2 id="6-蛋白质理化性质"><a href="#6-蛋白质理化性质" class="headerlink" title="6. 蛋白质理化性质"></a>6. 蛋白质理化性质</h2><h3 id="6-1-蛋白质变性"><a href="#6-1-蛋白质变性" class="headerlink" title="6.1 蛋白质变性"></a>6.1 蛋白质变性</h3><ul>
+<li>定义：天然蛋白质受物理或化学因素影响，分子内部原有高度规则性的空间排列（构象）发生变化（次级键和二硫键被破坏，<strong>一级结构不改变</strong>）</li>
+<li>蛋白质复性：一定条件下可恢复原有构象与生物活性</li>
+</ul>
+<h3 id="6-2-蛋白质的沉淀作用"><a href="#6-2-蛋白质的沉淀作用" class="headerlink" title="6.2 蛋白质的沉淀作用"></a>6.2 蛋白质的沉淀作用</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>盐析</strong></td>
+<td>加高浓度中性盐（如硫酸铵）；破坏胶体稳定因素；一般不引起变性</td>
+</tr>
+<tr>
+<td><strong>盐溶</strong></td>
+<td>加少量中性盐使蛋白质溶解度增加</td>
+</tr>
+<tr>
+<td>有机溶剂</td>
+<td>破坏水化膜</td>
+</tr>
+<tr>
+<td>重金属盐</td>
+<td>结合成不溶性盐</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="7-重要名词解释"><a href="#7-重要名词解释" class="headerlink" title="7. 重要名词解释"></a>7. 重要名词解释</h2><table>
+<thead>
+<tr>
+<th>名词</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>必需氨基酸</strong></td>
+<td>人体自身不能合成或合成速度远不能满足机体需求，必须通过食物摄取的一类氨基酸</td>
+</tr>
+<tr>
+<td><strong>两性离子（兼性离子）</strong></td>
+<td>同一分子上带有等量正负电荷时的分子状态</td>
+</tr>
+<tr>
+<td><strong>氨基酸的等电点</strong></td>
+<td>氨基酸解离成阳、阴离子趋势相等，净电荷为零时的溶液pH值</td>
+</tr>
+<tr>
+<td><strong>肽键</strong></td>
+<td>由前一个氨基酸的α-羧基与后一个氨基酸的α-氨基共同脱去1分子水形成的酰胺键 (-CO-NH-)</td>
+</tr>
+<tr>
+<td><strong>氨基酸残基</strong></td>
+<td>肽链中因相互连接失去一分子水，与原氨基酸比较已不是一个完整的氨基酸分子</td>
+</tr>
+<tr>
+<td><strong>蛋白质变性</strong></td>
+<td>天然蛋白质受物理或化学因素影响，分子内部原有构象发生变化，致使原有性质和生物功能发生部分或全部丧失的现象</td>
+</tr>
+<tr>
+<td><strong>α-螺旋</strong></td>
+<td>蛋白质中最常见的二级结构，3.6个氨基酸残基螺旋上升一圈，螺距0.54nm；相邻螺圈之间形成链内氢键(n→n+4)</td>
+</tr>
+<tr>
+<td><strong>β-折叠</strong></td>
+<td>蛋白质中常见的二级结构，肽链近乎完全伸展，邻近两条肽链以相同或相反方向平行排列，靠链间氢键维系</td>
+</tr>
+<tr>
+<td><strong>β-转角</strong></td>
+<td>蛋白质多肽链中180°回折处的结构，一般由4个连续氨基酸残基组成</td>
+</tr>
+<tr>
+<td><strong>茚三酮反应</strong></td>
+<td>α-氨基酸与茚三酮共热，生成蓝紫色化合物（最大吸收峰在570nm）的反应</td>
+</tr>
+<tr>
+<td><strong>双缩脲反应</strong></td>
+<td>蛋白质和多肽分子中的肽键在碱性溶液中与硫酸铜反应产生红紫色络合物的反应</td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 78590の笔记窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;78590
+        </div>
+        <div>
+            Based on the <a href="https://hexo.io">Hexo Engine</a> &amp;
+            <a href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    
+    <script src="/js/lib/mermaid.js"></script>
+    
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

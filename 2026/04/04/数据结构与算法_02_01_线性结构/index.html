@@ -270,7 +270,7 @@ List PtrL;</code></pre>
 <p>访问下标为i的元素：<code>L.Data[i-1]</code>或<code>Ptrl-&gt;Data[i]</code><br>线性表的长度：<code>L.Last+1</code>或<code>Ptrl-&gt;Last+1</code></p>
 <p>接下来，我们讲阐述如何在顺序存储中实现操作集</p>
 <hr>
-<h4 id="初始化-建立空的顺序表"><a href="#初始化-建立空的顺序表" class="headerlink" title="初始化(建立空的顺序表)"></a>初始化(建立空的顺序表)</h4><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>* <span class="hljs-title">List</span>;</span>
+<h5 id="初始化-建立空的顺序表"><a href="#初始化-建立空的顺序表" class="headerlink" title="初始化(建立空的顺序表)"></a>初始化(建立空的顺序表)</h5><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>* <span class="hljs-title">List</span>;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span>
     ElementType Data[MAXSIZE];
@@ -283,7 +283,7 @@ List <span class="hljs-title function_">MakeEmpty</span><span class="hljs-params
     <span class="hljs-keyword">return</span> Ptrl;
 &#125;</code></pre>
 
-<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-title function_">Find</span><span class="hljs-params">(ElementType X, List Ptrl)</span>&#123;
+<h5 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h5><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-title function_">Find</span><span class="hljs-params">(ElementType X, List Ptrl)</span>&#123;
     <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;
     <span class="hljs-keyword">while</span>(i &lt;= Ptrl-&gt;Last &amp;&amp; Ptrl-&gt;Data[i] != X)&#123;
         i++;
@@ -296,7 +296,7 @@ List <span class="hljs-title function_">MakeEmpty</span><span class="hljs-params
     &#125;
 &#125;</code></pre>
 
-<h4 id="顺序存储的插入与删除"><a href="#顺序存储的插入与删除" class="headerlink" title="顺序存储的插入与删除"></a>顺序存储的插入与删除</h4><h5 id="插入-在第i-1"><a href="#插入-在第i-1" class="headerlink" title="插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)"></a>插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)</h5><h6 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h6><ul>
+<h5 id="插入-在第i-1"><a href="#插入-在第i-1" class="headerlink" title="插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)"></a>插入(在第i(1&lt;&#x3D;i&lt;&#x3D;n+1)个位置上插入一个值为X的新元素)</h5><h6 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h6><ul>
 <li>移动<ul>
 <li>先把每个元素都向后移动一位，直到第i个位置空出来(使用循环实现，要从最后一个开始挪哦)</li>
 </ul>
@@ -342,6 +342,20 @@ List <span class="hljs-title function_">MakeEmpty</span><span class="hljs-params
     Ptrl-&gt;Last--;
     <span class="hljs-keyword">return</span>;
 &#125;</code></pre>
+
+<h4 id="链式存储实现线性表"><a href="#链式存储实现线性表" class="headerlink" title="链式存储实现线性表"></a>链式存储实现线性表</h4><p>不要求逻辑上相邻的两个元素物理上也相邻；通过链建立起数据元素之间的逻辑关系</p>
+<blockquote>
+<p>因此插入和删除不需要移动元素，只需要修改链</p>
+</blockquote>
+<pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>* <span class="hljs-title">List</span>;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span>
+    ElementType Data;
+    List Next;
+&#125;;
+
+Struct Lnode L;
+List PtrL;</code></pre>
     </div>
     
     
