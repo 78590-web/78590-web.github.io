@@ -350,12 +350,42 @@ List <span class="hljs-title function_">MakeEmpty</span><span class="hljs-params
 <pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>* <span class="hljs-title">List</span>;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span>
-    ElementType Data;
-    List Next;
+    ElementType Data;<span class="hljs-comment">//这个节点所对应的数据</span>
+    List Next; <span class="hljs-comment">//指向下一个节点的指针</span>
 &#125;;
 
 Struct Lnode L;
 List PtrL;</code></pre>
+
+<h5 id="求表长"><a href="#求表长" class="headerlink" title="求表长"></a>求表长</h5><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-title function_">Length</span><span class="hljs-params">(List Ptrl)</span>&#123;
+    List p = Ptrl;
+    <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(p)&#123;
+        p = p-&gt;Next;
+        j++;
+    &#125;
+    <span class="hljs-keyword">return</span> j;
+&#125;</code></pre>
+
+<h5 id="查找-1"><a href="#查找-1" class="headerlink" title="查找"></a>查找</h5><h6 id="按序号查找FindKth"><a href="#按序号查找FindKth" class="headerlink" title="按序号查找FindKth"></a>按序号查找FindKth</h6><pre><code class="hljs C">Findkth(<span class="hljs-type">int</span> K, List Ptrl)&#123;
+    List p = Ptrl;
+    <span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span>(p != null &amp;&amp; i &lt; K)&#123;
+        p = p-&gt;Next;
+        i++;
+    &#125;
+    <span class="hljs-keyword">if</span>(i == k)<span class="hljs-keyword">return</span> p;<span class="hljs-comment">//找到第k个并且返回指针</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> null;<span class="hljs-comment">//没找到返回null</span>
+&#125;</code></pre>
+
+<h6 id="按值查找Find"><a href="#按值查找Find" class="headerlink" title="按值查找Find"></a>按值查找Find</h6><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-title function_">Find</span><span class="hljs-params">(ElementType X, List Ptrl)</span>&#123;
+    List p = Ptrl;
+    <span class="hljs-keyword">while</span>(p !=<span class="hljs-literal">NULL</span> &amp;&amp; p-&gt;Data != X)
+        p = p-&gt;Next;
+    <span class="hljs-keyword">return</span> p;
+&#125;</code></pre>
+
+<h5 id="初始化-建立空的链式表"><a href="#初始化-建立空的链式表" class="headerlink" title="初始化(建立空的链式表)"></a>初始化(建立空的链式表)</h5>
     </div>
     
     
