@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Plant Physiology Unit 1 | 78590の笔记窝</title>
+    <meta name="author" content="78590" />
+    <meta name="description" content="咕咕嘎嘎" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="https://s4.zstatic.net/ajax/libs/mermaid/10.9.0/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>78590の笔记窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;78590の笔记窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Plant Physiology Unit 1</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/17
+        </span>
+        
+        <span class="category">
+            <a href="/categories/Plant-Physiology/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Plant_Physiology
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>Unit 1</p>
+<span id="more"></span>
+
+<h1 id="Plant-and-Cell-Architecture"><a href="#Plant-and-Cell-Architecture" class="headerlink" title="Plant and Cell Architecture"></a>Plant and Cell Architecture</h1><h2 id="1-Plant-Cell-Structures-and-Organelles"><a href="#1-Plant-Cell-Structures-and-Organelles" class="headerlink" title="1. Plant Cell Structures and Organelles"></a>1. Plant Cell Structures and Organelles</h2><ul>
+<li>Primary wall</li>
+<li>Secondary wall</li>
+<li>Middle lamella(胞间层)</li>
+<li>Intercellular air space (细胞间气腔)<ul>
+<li>Cellulose(纤维素)</li>
+<li>Cellulose microfibrils(纤维素微纤维)</li>
+<li>Hemicellulose(半纤维素)</li>
+<li>Pectin(果胶)</li>
+<li>Lignin(木质素)</li>
+</ul>
+</li>
+<li>Plasma membrane(质膜)<ul>
+<li>Phospholipid bilayer, integral protein, peripheral protein, glycoprotein(磷脂双分子层，整体蛋白，外周蛋白，糖蛋白)</li>
+</ul>
+</li>
+<li>Cytosol(细胞溶质)</li>
+<li>Cytoplasm(细胞质)</li>
+<li>Plasmodesmata(胞间连丝)</li>
+<li>Organelle(细胞器)<ul>
+<li>Vacuole, Tonoplast(液泡，液泡层)</li>
+<li>Nucleus, nuclear envelope, nucleolus, chromatin(核，核膜，核仁，染色质)</li>
+<li>Endoplasmic reticulum(内质网)</li>
+<li>smooth vs. rough, ribosome, oil bodies(光滑与粗糙，核糖体，油体)</li>
+</ul>
+</li>
+<li>Golgi apparatus(高尔基体)</li>
+<li>Mitochondria, outer and inner membrane(线粒体，外膜和内膜)</li>
+<li>Chloroplast, outer and inner membrane, thylakoid, thylakoid membrane, thylakoid lumen, (叶绿体，内外膜，类囊体，类囊体膜，类囊体腔)</li>
+<li>granum, stroma lamellae, stroma(基粒，基质片层，基质)</li>
+<li>Chromoplast, amyloplast(有色体，造粉体)</li>
+<li>Microbodies, peroxisome(微体，过氧化物酶体)</li>
+<li>Cytoskeleton, cytoplasmic streaming(细胞骨架，胞质环流)</li>
+<li>Symplast vs. Apoplast(共质体，质外体)</li>
+</ul>
+<h2 id="2-General-Plant-Structures-organs-tissues-cells"><a href="#2-General-Plant-Structures-organs-tissues-cells" class="headerlink" title="2. General Plant Structures (organs, tissues, cells)"></a>2. General Plant Structures (organs, tissues, cells)</h2><ul>
+<li>Monocot vs. Dicot (differences in tissue arrangement in stem, roots, and leaves)</li>
+<li>Organs<ul>
+<li>Stem</li>
+<li>Root, lateral root (根，侧根)</li>
+<li>Leaf blade, petiole(叶片，叶柄)</li>
+<li>Nodes</li>
+<li>Internodes</li>
+</ul>
+</li>
+<li>Meristems(分生组织)<ul>
+<li>Primary vs. secondary growth</li>
+<li>Apical (shoot and root)(顶端分生组织，茎尖与根尖)</li>
+<li>Axillary(腋生分生组织)</li>
+<li>Intercalary(居间分生组织)</li>
+<li>Lateral(侧生分生组织)</li>
+<li>Vascular cambium(维管形成层)</li>
+</ul>
+</li>
+<li>Tissues<ul>
+<li>Dermal<ul>
+<li>Epidermis, trichomes(表皮，表皮毛)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ground<ul>
+<li>Parenchyma(薄壁组织)</li>
+<li>Collenchyma(厚角组织)</li>
+<li>Sclerenchyma(厚壁组织)</li>
+</ul>
+</li>
+<li>Vascular</li>
+<li>Xylem, tracheids, vessel elements, vessel (木质部，管胞，导管分子，导管)</li>
+<li>Phloem, sieve tube elements, sieve tube, sieve plates, companion cell(韧皮部，筛管分子，筛管，筛板，伴胞)</li>
+<li>Cortex(皮层)</li>
+<li>Pith(髓)</li>
+<li>Vascular cambium(维管形成层)</li>
+<li>Vascular bundle(维管束)</li>
+<li>Pericycle(中柱鞘)</li>
+<li>Endodermis(内皮层)</li>
+<li>Root hair(根毛)</li>
+<li>Secondary xylem and phloem(次生木质部与次生韧皮部)</li>
+<li>Heartwood and sapwood(心材，边材)</li>
+<li>Rays(维管射线)</li>
+<li>Cuticle(角质层)</li>
+<li>Mesophyll(叶肉)</li>
+<li>Spongy mesophyll(海绵组织)</li>
+<li>Palisade parenchyma(栅栏组织)</li>
+<li>Bundle sheath cells(维管束鞘细胞)</li>
+<li>Stomata, guard cells(气孔，保卫细胞)</li>
+</ul>
+<h2 id="3-Seed-and-Seedling-structures"><a href="#3-Seed-and-Seedling-structures" class="headerlink" title="3. Seed and Seedling structures"></a>3. Seed and Seedling structures</h2><ul>
+<li>Zones in a meristem (such as a root apical meristem)(分生组织分区，如根尖分生组织)</li>
+<li>Meristematic zone(分生区)</li>
+<li>Elongation zone(伸长区)</li>
+<li>Maturation zone(成熟区)</li>
+</ul>
+<p>Non-endospermic vs. endospermic seeds(无胚乳种子，有胚乳种子)</p>
+<p>Seed parts:</p>
+<ul>
+<li><p>Testa or seed coat(种皮)</p>
+</li>
+<li><p>Endosperm(胚乳)</p>
+</li>
+<li><p>Hypocotyl(下胚轴)</p>
+</li>
+<li><p>Epicotyl(上胚轴)</p>
+</li>
+<li><p>Radicle(胚根)</p>
+</li>
+<li><p>Plumule(胚芽)</p>
+</li>
+<li><p>Scutellum(盾片)</p>
+</li>
+<li><p>Coleoptile(胚芽鞘)</p>
+</li>
+<li><p>Coleorhiza(胚根鞘)</p>
+</li>
+<li><p>Hypogeal germination(留土萌发)</p>
+</li>
+<li><p>Epigeal germination(出土萌发)</p>
+</li>
+</ul>
+<p><img src="/image.png" alt="alt text"></p>
+<ol>
+<li>What is the function of the pericycle?</li>
+</ol>
+<p>meristem that gives rise to branch roots &#x3D; lateral roots<br>(Primary growth)</p>
+<ol start="2">
+<li>What is the function of the vascular cambium?</li>
+</ol>
+<p>meristem that gives rise to new xylem and phloem<br>secondary growth &#x3D; lateral meristem</p>
+<p>Match the best term with the descriptions below (each term can be used once, more than<br>once, or not at all).<br>A. Amyloplast<br>B. Apical<br>C. Axillary<br>D. Chloroplast<br>E. Chromoplast<br>F. Cytoplasm<br>G. Cytoskeleton<br>H. Golgi apparatus<br>I. Intercalary<br>J. Intercelluar air space<br>K. Internode<br>L. Lateral<br>M. Middle lamella<br>N. Mitochondria<br>O. Node<br>P. Nuclear envelope<br>Q. Organelle<br>R. Petiole<br>S. Plasma membrane<br>T. Plasmodesmata<br>U. Primary wall<br>V. Rough ER<br>W. Secondary wall<br>X. Smooth ER<br>Y. Tonoplast<br>Z. Vacuole</p>
+<ol>
+<li>_<em><strong>T</strong></em> connects the cytoplasm of cells in the symplast</li>
+<li>_<em><strong>V</strong></em> all plant cells have this type of cell wall</li>
+<li>_<em><strong>E</strong></em> plastids that contains high amounts of pigment other than chlorophyll</li>
+<li>_<em><strong>S</strong></em> phospholipid bilayer that surrounds the cytoplasm of a cell</li>
+<li>_<em><strong>V</strong></em> tubular network that contains ribosomes and synthesizes proteins in cells</li>
+<li>_<em><strong>I</strong></em> Meristem responsible for internode elongation</li>
+<li>_<em><strong>B</strong></em> Meristem responsible for primary growth of a shoot tip</li>
+<li>_<em><strong>H</strong></em> Organelle that processes lipids or proteins into secretory vesicles for transport<br>within the cell</li>
+<li>_<em><strong>N</strong></em> Double-membrane organelle that is the site of respiration</li>
+<li>_<em><strong>O</strong></em> position on a stem where a leaf is attached</li>
+</ol>
+<p><img src="/image-1.png" alt="alt text"><br><img src="/image-2.png" alt="alt text"></p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Chinese</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Multi-</td>
+<td>多</td>
+</tr>
+<tr>
+<td>eu-(eukaryote真核生物)</td>
+<td>真</td>
+</tr>
+<tr>
+<td>pro-</td>
+<td>原</td>
+</tr>
+<tr>
+<td>photo-</td>
+<td>光</td>
+</tr>
+<tr>
+<td>-sperm</td>
+<td>精子</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 78590の笔记窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;78590
+        </div>
+        <div>
+            Based on the <a href="https://hexo.io">Hexo Engine</a> &amp;
+            <a href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    
+    <script src="/js/lib/mermaid.js"></script>
+    
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

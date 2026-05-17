@@ -385,7 +385,43 @@ List PtrL;</code></pre>
     <span class="hljs-keyword">return</span> p;
 &#125;</code></pre>
 
-<h5 id="初始化-建立空的链式表"><a href="#初始化-建立空的链式表" class="headerlink" title="初始化(建立空的链式表)"></a>初始化(建立空的链式表)</h5>
+<h5 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h5><p>在i-1(1&lt;&#x3D;i&lt;&#x3D;n+1)位置插入一个值为X的新节点</p>
+<ol>
+<li>构造一个新节点，用s指向</li>
+<li>找到链表的第i-1个节点，用p指向</li>
+<li>修改指针，插入节点(p之后插入的新节点是s)</li>
+</ol>
+<pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>* <span class="hljs-title">List</span>;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span>
+    ElementType Data;<span class="hljs-comment">//这个节点所对应的数据</span>
+    List Next; <span class="hljs-comment">//指向下一个节点的指针</span>
+&#125;;
+
+Struct Lnode L;
+List PtrL;
+
+List <span class="hljs-title function_">insert</span><span class="hljs-params">(ElementType X, <span class="hljs-type">int</span> i, List Ptrl)</span>&#123;
+    List p, s;
+    <span class="hljs-keyword">if</span>(i == <span class="hljs-number">1</span>)&#123;
+        s = (List)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> LNode));
+        s-&gt;Data = X;
+        s-&gt;Next = Ptrl;
+        <span class="hljs-keyword">return</span> s;
+    &#125;
+    p = FindKth(i<span class="hljs-number">-1</span>, Ptrl);
+    <span class="hljs-keyword">if</span>(p == <span class="hljs-literal">NULL</span>)&#123;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;插入位置不合法&quot;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+    &#125;
+    <span class="hljs-keyword">else</span>&#123;
+        s = (List)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> LNode));
+        s-&gt;Data = X;
+        s-&gt;Next = p-&gt;Next;
+        p-&gt;Next = s;
+        <span class="hljs-keyword">return</span> Ptrl;
+    &#125;
+&#125;</code></pre>
     </div>
     
     
